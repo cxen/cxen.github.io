@@ -54,7 +54,9 @@ plot_ly(APF3D,
         text = paste("Community: ", APF3D$Label),
         mode = "markers",
         color = ~Group,
-        size = ~Activity_change)
+        size = ~Activity_change) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA change / %")))
 
 plot_ly(APF3D,
         x = ~Phylogenetic_Diversity, y = ~Activity_change,
@@ -62,7 +64,10 @@ plot_ly(APF3D,
         text = paste("Community: ", APF3D$Label),
         mode = "markers",
         color = ~Group,
-        size = ~Functional_Diversity)
+        size = ~Functional_Diversity) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA change / %"),
+                      zaxis = list(title = "Functional Dissimilarity")))
 
 plot_ly(APF3D,
         x = ~Functional_Diversity, y = ~Activity_change,
@@ -70,7 +75,10 @@ plot_ly(APF3D,
         text = paste("Community: ", APF3D$Label),
         mode = "markers",
         color = ~Group,
-        size = ~Phylogenetic_Diversity)
+        size = ~Phylogenetic_Diversity) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA change / %"),
+                      zaxis = list(title = "Functional Dissimilarity")))
 
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
