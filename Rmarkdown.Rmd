@@ -1,0 +1,133 @@
+---
+title: "Website"
+author: "cxen"
+date: "February 1, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE, message=FALSE, warning=FALSE}
+##############################################################
+
+# devtools::install_github("AckerDWM/gg3D")
+
+library(openxlsx)
+library(ggplot2)
+library(plotly)
+library(gg3D)
+library(scatterplot3d)
+library(RColorBrewer)
+
+##############################################################
+
+APF3D <- read.xlsx("C:/Users/Constantinos/Desktop/Mixed Cultures Experiment - 2018/Assay-25_Fluorescence Assays Rates/Clusters/Activity-Dissimilarity matrix.xlsx")
+
+colnames(APF3D)[colnames(APF3D)=="Activity.change"] <- "Activity_change"
+colnames(APF3D)[colnames(APF3D)=="Phyl..Distance"] <- "Phylogenetic_Diversity"
+colnames(APF3D)[colnames(APF3D)=="Fun..Distance"] <- "Functional_Diversity"
+
+APF3D.log <- APF3D
+
+APF3D.log$Activity_change <- log10(APF3D$Activity_change+101)
+# APF3D.log$Phylogenetic_Diversity <- log10(APF3D$Phylogenetic_Diversity)
+# APF3D.log$Functional_Diversity <- log10(APF3D$Functional_Diversity)
+
+##############################################################
+
+# 2D plots
+plot_ly(APF3D,
+        x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Activity_change)
+
+plot_ly(APF3D,
+        x = ~Phylogenetic_Diversity, y = ~Activity_change,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Functional_Diversity)
+
+plot_ly(APF3D,
+        x = ~Functional_Diversity, y = ~Activity_change,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Phylogenetic_Diversity)
+
+plot_ly(APF3D.log,
+        x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Activity_change)
+
+plot_ly(APF3D.log,
+        x = ~Phylogenetic_Diversity, y = ~Activity_change,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Functional_Diversity)
+
+plot_ly(APF3D.log,
+        x = ~Functional_Diversity, y = ~Activity_change,
+        type="scatter",
+        text = paste("Community: ", APF3D$Label),
+        mode = "markers",
+        color = ~Group,
+        size = ~Phylogenetic_Diversity)
+
+##############################################################
+
+# 3D plots
+attach(APF3D)
+plot_ly(APF3D,
+        x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
+        color = ~Group,
+        type = "scatter3d",
+        mode = "markers",
+        text = paste("Community: ", Label,
+                     "</br> Activity %:", Activity_change)) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA change / %"),
+                      zaxis = list(title = "Functional Dissimilarity")))
+
+attach(APF3D.log)
+plot_ly(APF3D.log,
+        x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
+        color = ~Group,
+        type = "scatter3d",
+        mode = "markers",
+        text = paste("Community: ", Label,
+                      "</br> Activity %:", Activity_change)) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA change / %"),
+                      zaxis = list(title = "Functional Dissimilarity")))
+
+##############################################################
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
