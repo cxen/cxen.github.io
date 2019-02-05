@@ -44,37 +44,6 @@ APF3D.log$Activity_change <- log10(APF3D$Activity_change+101)
 ##############################################################
 
 # 2D plots
-# plot_ly(APF3D,
-#         x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
-#         type="scatter",
-#         text = paste("Community: ", APF3D$Label),
-#         mode = "markers",
-#         color = ~Group,
-#         size = ~Activity_change) %>%
-#   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-#                       yaxis = list(title = "EEA change / %")))
-# 
-# plot_ly(APF3D,
-#         x = ~Phylogenetic_Diversity, y = ~Activity_change,
-#         type="scatter",
-#         text = paste("Community: ", APF3D$Label),
-#         mode = "markers",
-#         color = ~Group,
-#         size = ~Functional_Diversity) %>%
-#   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-#                       yaxis = list(title = "EEA change / %"),
-#                       zaxis = list(title = "Functional Dissimilarity")))
-# 
-# plot_ly(APF3D,
-#         x = ~Functional_Diversity, y = ~Activity_change,
-#         type="scatter",
-#         text = paste("Community: ", APF3D$Label),
-#         mode = "markers",
-#         color = ~Group,
-#         size = ~Phylogenetic_Diversity) %>%
-#   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-#                       yaxis = list(title = "EEA change / %"),
-#                       zaxis = list(title = "Functional Dissimilarity")))
 
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
@@ -109,17 +78,6 @@ plot_ly(APF3D.log,
 ##############################################################
 
 # 3D plots
-# attach(APF3D)
-# plot_ly(APF3D,
-#         x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
-#         color = ~Group,
-#         type = "scatter3d",
-#         mode = "markers",
-#         text = paste("Community: ", Label,
-#                      "</br> Activity %:", Activity_change)) %>%
-#   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-#                       yaxis = list(title = "EEA proportional change / %"),
-#                       zaxis = list(title = "Functional Dissimilarity")))
 
 attach(APF3D.log)
 plot_ly(APF3D.log,
