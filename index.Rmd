@@ -86,7 +86,7 @@ plot_ly(APF3D.log,
         type = "scatter3d",
         mode = "markers",
         text = paste("Community: ", Label,
-                      "</br> Activity %:", Activity_change)) %>%
+                      "</br> Activity:", Activity_change)) %>%
   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
                       yaxis = list(title = "EEA proportional change / log10"),
                       zaxis = list(title = "Functional Dissimilarity")))
