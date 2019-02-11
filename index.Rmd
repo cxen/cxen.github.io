@@ -3,6 +3,7 @@ title: "Love Triangle: An Activity-Phylogeny-Function Relationship"
 author: "Constantinos Xenophontos"
 date: "February 19, 2019"
 output: html_document
+theme: journal
 ---
 
 <style>
@@ -64,8 +65,7 @@ plot_ly(APF3D.log,
         type="scatter",
         text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
-        marker = list(line = list(color = "black",
-                                  width = 1)),
+        marker = list(line = list(color = "black")),
         color = ~Group,
         colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Activity_change) %>%
@@ -91,8 +91,7 @@ plot_ly(APF3D.log,
         type="scatter",
         text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
-        marker = list(line = list(color = "black",
-                                  width = 1)),
+        marker = list(line = list(color = "black")),
         color = ~Group,
         colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Functional_Diversity) %>%
@@ -117,8 +116,7 @@ plot_ly(APF3D.log,
         type="scatter",
         text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
-        marker = list(line = list(color = "black",
-                                  width = 1)),
+        marker = list(line = list(color = "black")),
         color = ~Group,
         colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Phylogenetic_Diversity) %>%
