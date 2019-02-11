@@ -13,16 +13,18 @@ output: html_document
 }
 </style>
 
-```{r setup, include=FALSE}
+```{r, setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Family matters
 
-```{r echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
-##############################################################
+&nbsp;
+&nbsp;
+&nbsp;
 
-# devtools::install_github("AckerDWM/gg3D")
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+##############################################################
 
 library(openxlsx)
 library(ggplot2)
@@ -42,9 +44,17 @@ colnames(APF3D)[colnames(APF3D)=="Fun..Distance"] <- "Functional_Diversity"
 APF3D.log <- APF3D
 
 APF3D.log$Activity_change <- log10(APF3D$Activity_change+101)
-# APF3D.log$Phylogenetic_Diversity <- log10(APF3D$Phylogenetic_Diversity)
-# APF3D.log$Functional_Diversity <- log10(APF3D$Functional_Diversity)
 
+##############################################################
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Phylogeny vs. Function, Size=Activity
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
 
 # 2D plots
@@ -58,6 +68,19 @@ plot_ly(APF3D.log,
         size = ~Activity_change) %>%
   layout(xaxis = list(title = "Phylogenetic Dissimilarity"),
          yaxis = list(title = "Functional Dissimilarity"))
+##############################################################
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Phylogeny vs. Activity, Size=Function
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
+
+# 2D plots
 
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Activity_change,
@@ -69,6 +92,19 @@ plot_ly(APF3D.log,
   layout(xaxis = list(title = "Phylogenetic Dissimilarity"),
          yaxis = list(title = "EEA % change / log10"))
 
+##############################################################
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Function vs. Activity, Size=Phylogeny
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
+
+# 2D plots
 plot_ly(APF3D.log,
         x = ~Functional_Diversity, y = ~Activity_change,
         type="scatter",
@@ -80,7 +116,16 @@ plot_ly(APF3D.log,
          yaxis = list(title = "EEA % change / log10"))
 
 ##############################################################
+```
 
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Phylogeny vs. Function vs. Activity
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
 # 3D plots
 
 attach(APF3D.log)
