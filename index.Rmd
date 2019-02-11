@@ -62,12 +62,16 @@ APF3D.log$Activity_change <- log10(APF3D$Activity_change+101)
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Functional_Diversity,
         type="scatter",
-        text = paste("Community: ", APF3D$Label),
+        text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
+        marker = list(line = list(color = "black",
+                                  width = 1)),
         color = ~Group,
+        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Activity_change) %>%
   layout(xaxis = list(title = "Phylogenetic Dissimilarity"),
          yaxis = list(title = "Functional Dissimilarity"))
+
 ##############################################################
 ```
 
@@ -85,9 +89,12 @@ plot_ly(APF3D.log,
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Activity_change,
         type="scatter",
-        text = paste("Community: ", APF3D$Label),
+        text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
+        marker = list(line = list(color = "black",
+                                  width = 1)),
         color = ~Group,
+        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Functional_Diversity) %>%
   layout(xaxis = list(title = "Phylogenetic Dissimilarity"),
          yaxis = list(title = "EEA % change / log10"))
@@ -108,9 +115,12 @@ plot_ly(APF3D.log,
 plot_ly(APF3D.log,
         x = ~Functional_Diversity, y = ~Activity_change,
         type="scatter",
-        text = paste("Community: ", APF3D$Label),
+        text = paste("Community: ", APF3D.log$Label),
         mode = "markers",
+        marker = list(line = list(color = "black",
+                                  width = 1)),
         color = ~Group,
+        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
         size = ~Phylogenetic_Diversity) %>%
   layout(xaxis = list(title = "Functional Dissimilarity"),
          yaxis = list(title = "EEA % change / log10"))
@@ -131,7 +141,7 @@ plot_ly(APF3D.log,
 attach(APF3D.log)
 
 legendtitle <- list(y=0.94,x=1.06, text="Community\nGroup\n",showarrow=F)
-
+      
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
         color = ~Group,
