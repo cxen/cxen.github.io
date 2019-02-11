@@ -5,17 +5,21 @@ date: "February 19, 2019"
 output: html_document
 ---
 
+<style>
+.main-container {
+  max-width: 1800px;
+  margin-left: 500px;
+  margin-right: auto;
+}
+</style>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Family matters
 
-
-## Including Plots
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
 
 # devtools::install_github("AckerDWM/gg3D")
@@ -80,16 +84,32 @@ plot_ly(APF3D.log,
 # 3D plots
 
 attach(APF3D.log)
+
+legendtitle <- list(y=0.94,x=1.06, text="Community\nGroup\n",showarrow=F)
+
 plot_ly(APF3D.log,
         x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
         color = ~Group,
+        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"), # colors = "Set1",
+        # size = ~Activity_change,
         type = "scatter3d",
         mode = "markers",
+        marker = list(size = 10,
+                      line = list(color = "black",
+                                  width = 1)),
         text = paste("Community: ", Label,
                       "</br> Activity:", Activity_change)) %>%
   layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-                      yaxis = list(title = "EEA proportional change / log10"),
-                      zaxis = list(title = "Functional Dissimilarity")))
+                      yaxis = list(title = "EEA % change / log10"),
+                      zaxis = list(title = "Functional Dissimilarity")),
+         margin = list(r = 0,
+                       t = 0,
+                       b = 0,
+                       l = 0,
+                       pad = 0),
+         legend = list(x = 100,
+                       y = 0.9),
+         annotations = legendtitle)
 
 ##############################################################
 ```
