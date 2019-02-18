@@ -3,7 +3,6 @@ title: "Love Triangle: An Activity-Phylogeny-Function Relationship"
 author: "Constantinos Xenophontos"
 date: "February 19, 2019"
 output: html_document
-theme: journal
 ---
 
 <style>
@@ -17,12 +16,6 @@ theme: journal
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-## Family matters
-
-&nbsp;
-&nbsp;
-&nbsp;
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 ##############################################################
@@ -49,11 +42,85 @@ APF3D.log$Activity_change <- log10(APF3D$Activity_change+101)
 ##############################################################
 ```
 
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
+
+## Assay-25 Communities data
+comms <- read.xlsx("C:/Users/Constantinos/Desktop/Mixed Cultures Experiment - 2018/Assay-25_Fluorescence Assays Rates/Clusters/PCA/comms.xlsx", sheet = "rates", check.names = FALSE)
+
+comms.100 <- read.xlsx("C:/Users/Constantinos/Desktop/Mixed Cultures Experiment - 2018/Assay-25_Fluorescence Assays Rates/Clusters/PCA/comms.xlsx", sheet = "% change", check.names = FALSE)
+
+# Prepare PCA dataframe
+# comms.pca <- comms[c(3:13)]
+# comms.pca.z <- scale(comms.pca)
+# comms.pca.log <- log10(comms.pca+1)
+
+comms.pca.100 <- comms.100[c(3:13)]
+comms.pca.100.z <- scale(comms.pca.100)
+comms.pca.100.log <- as.data.frame(log10(comms.pca.100+101))
+
+comms.pca.100[is.na(comms.pca.100)] <- 0
+comms.pca.100.z[is.na(comms.pca.100.z)] <- 0
+comms.pca.100.log[is.na(comms.pca.100.log)] <- 0
+##############################################################
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 
-### Phylogeny vs. Function, Size=Activity
+### Community proporional changes (Fisher's z transformed) PCA
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
+
+## 3D PCA of Fisher's z -scale transformed communities
+
+pca9 <- princomp(comms.pca.100.z,
+               scores = TRUE,
+               cor = TRUE)
+
+# Scores
+scores <- pca9$scores
+x <- scores[,1]
+y <- scores[,2]
+z <- scores[,3]
+
+# 3D plot
+attach(comms)
+plot_ly(x = x, y = y, z = z,
+            type="scatter3d",
+            mode="markers",
+            color = ~Group,
+            colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"),
+            marker = list(size = 10,
+                          line = list(color = "black",
+                                      width = 1))) %>%
+  layout(scene = list(xaxis = list(title = "PC1 (50.23%)"),
+                      yaxis = list(title = "PC2 (16.56%)"),
+                      zaxis = list(title = "PC3 (10.01%")),
+         margin = list(r = 0,
+                       t = 0,
+                       b = 0,
+                       l = 0,
+                       pad = 0),
+         legend = list(x = 100,
+                       y = 0.9))
+
+##############################################################
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Phylogeny vs. Function, Size=EEActivity
 
 ```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
@@ -78,8 +145,11 @@ plot_ly(APF3D.log,
 &nbsp;
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-### Phylogeny vs. Activity, Size=Function
+### Phylogeny vs. Activity, Size=Functional Dissimilarity
 
 ```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
@@ -104,8 +174,11 @@ plot_ly(APF3D.log,
 &nbsp;
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-### Function vs. Activity, Size=Phylogeny
+### Function vs. Activity, Size=Phylogenetic Dissimilarity
 
 ```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
@@ -122,47 +195,6 @@ plot_ly(APF3D.log,
         size = ~Phylogenetic_Diversity) %>%
   layout(xaxis = list(title = "Functional Dissimilarity"),
          yaxis = list(title = "EEA % change / log10"))
-
-##############################################################
-```
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-### Phylogeny vs. Function vs. Activity
-
-```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
-##############################################################
-# 3D plots
-
-attach(APF3D.log)
-
-legendtitle <- list(y=0.94,x=1.06, text="Community\nGroup\n",showarrow=F)
-      
-plot_ly(APF3D.log,
-        x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
-        color = ~Group,
-        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"), # colors = "Set1",
-        # size = ~Activity_change,
-        type = "scatter3d",
-        mode = "markers",
-        marker = list(size = 10,
-                      line = list(color = "black",
-                                  width = 1)),
-        text = paste("Community: ", Label,
-                      "</br> Activity:", Activity_change)) %>%
-  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
-                      yaxis = list(title = "EEA % change / log10"),
-                      zaxis = list(title = "Functional Dissimilarity")),
-         margin = list(r = 0,
-                       t = 0,
-                       b = 0,
-                       l = 0,
-                       pad = 0),
-         legend = list(x = 100,
-                       y = 0.9),
-         annotations = legendtitle)
 
 ##############################################################
 ```
