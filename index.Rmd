@@ -72,7 +72,7 @@ comms.pca.100.log[is.na(comms.pca.100.log)] <- 0
 <br>
 <br>
 
-### Community proporional changes (Fisher's z transformed) PCA
+### Community proportional activity changes (Fisher's z transformed) PCA
 
 ```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
 ##############################################################
@@ -119,6 +119,18 @@ plot_ly(x = x, y = y, z = z,
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Activity vs. Phylogeny vs. Function
 
@@ -153,6 +165,27 @@ plot_ly(APF3D.log,
          annotations = legendtitle)
 ##############################################################
 ```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# Next steps...
 
 <br>
 <br>
