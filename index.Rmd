@@ -65,12 +65,12 @@ comms.pca.100.log[is.na(comms.pca.100.log)] <- 0
 ##############################################################
 ```
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Community proporional changes (Fisher's z transformed) PCA
 
@@ -113,12 +113,53 @@ plot_ly(x = x, y = y, z = z,
 ##############################################################
 ```
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### Activity vs. Phylogeny vs. Function
+
+```{r, echo=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+##############################################################
+attach(APF3D.log)
+
+legendtitle <- list(y=0.94,x=1.06, text="Community\nGroup\n",showarrow=F)
+      
+plot_ly(APF3D.log,
+        x = ~Phylogenetic_Diversity, y = ~Activity_change, z = ~Functional_Diversity,
+        color = ~Group,
+        colors = c("#F8766D","#7CAE00", "#00BFC4", "#C77CFF"), # colors = "Set1",
+        # size = ~Activity_change,
+        type = "scatter3d",
+        mode = "markers",
+        marker = list(size = 10,
+                      line = list(color = "black",
+                                  width = 1)),
+        text = paste("Community: ", Label,
+                      "</br> Activity:", Activity_change)) %>%
+  layout(scene = list(xaxis = list(title = "Phylogenetic Dissimilarity"),
+                      yaxis = list(title = "EEA % change / log10"),
+                      zaxis = list(title = "Functional Dissimilarity")),
+         margin = list(r = 0,
+                       t = 0,
+                       b = 0,
+                       l = 0,
+                       pad = 0),
+         legend = list(x = 100,
+                       y = 0.9),
+         annotations = legendtitle)
+##############################################################
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Phylogeny vs. Function, Size=EEActivity
 
@@ -142,12 +183,12 @@ plot_ly(APF3D.log,
 ##############################################################
 ```
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Phylogeny vs. Activity, Size=Functional Dissimilarity
 
@@ -171,12 +212,12 @@ plot_ly(APF3D.log,
 ##############################################################
 ```
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Function vs. Activity, Size=Phylogenetic Dissimilarity
 
