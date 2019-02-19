@@ -79,12 +79,11 @@ comms.pca.100.log[is.na(comms.pca.100.log)] <- 0
 
 ## 3D PCA of Fisher's z -scale transformed communities
 
-pca9 <- princomp(comms.pca.100.z,
-               scores = TRUE,
-               cor = TRUE)
+pca7 <- prcomp(comms.pca.100.z,
+               center = TRUE)
 
 # Scores
-scores <- pca9$scores
+scores <- pca7$x
 x <- scores[,1]
 y <- scores[,2]
 z <- scores[,3]
