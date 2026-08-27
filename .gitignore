@@ -2,4 +2,7 @@
 /_site/
 .DS_Store
 
+TODO.md
+NOTES.md
+
 **/*.quarto_ipynb
