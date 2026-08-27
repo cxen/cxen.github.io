@@ -32,7 +32,7 @@ website:
         href: https://scholar.google.com/citations?user=dGgTnyUAAAAJ
         aria-label: Google Scholar
       - icon: envelope
-        href: mailto:constantinos.xenophontos@gmail.com
+        href: "#email"   # resolved to a mailto: by assets/email.html
         aria-label: Email
   page-footer:
     left: "© 2026 Constantinos Xenophontos"
@@ -48,4 +48,5 @@ format:
       dark: [darkly, custom.scss]
     toc: false
     link-external-newwindow: true
+    include-after-body: assets/email.html
     smooth-scroll: true

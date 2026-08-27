@@ -72,6 +72,11 @@ Flat Quarto website project, no computations (no `_freeze`).
   adding an item to `software.yml`. An item without `path:` renders as a non-clickable card.
 - `custom.scss` — single accent colour (`$accent`), transparent navbar, pill-style about
   links, `.cv-entry` grid, listing-card hover. Site-wide overrides go here, not a `.css`.
+- `assets/email.html` — included after the body on every page. The contact address is **not**
+  written anywhere in the HTML sources: navbar and about links use `href: "#email"` and this
+  script rewrites them to a `mailto:` from a ROT13 string at load time (anti-scraping). To
+  change the address, regenerate the ROT13 string in this file and update the plain-text
+  contact line in `cv.qmd` (Typst-only block — the PDF does carry the address in clear).
 - `_extensions/schochastics/academicons` — provides `{{< ai orcid >}}` etc. for the ORCID
   icon in the navbar and about links (Bootstrap Icons has no ORCID glyph). Committed.
 - `images/profile.jpg` — the site portrait (2024 Humanitas photo, 1200px), used by the

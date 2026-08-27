@@ -17,7 +17,7 @@ about:
       href: https://scholar.google.com/citations?user=dGgTnyUAAAAJ
     - icon: envelope
       text: Email
-      href: mailto:constantinos.xenophontos@gmail.com
+      href: "#email"   # resolved to a mailto: by assets/email.html
 ---
 
 <!-- Bio draft (Aug 2026): grounded in ORCID, the 2022 CV repo, and public GitHub.
