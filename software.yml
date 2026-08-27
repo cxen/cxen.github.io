@@ -1,0 +1,26 @@
+- title: FriendChip
+  path: https://github.com/cxen/FriendChip
+  description: >-
+    Config-first Python pipeline for microfluidics timelapse image analysis —
+    from raw Leica .lif and Nikon .nd2 files through segmentation, tracking and
+    lineage reconstruction to growth rates, dose–response curves and spatial
+    cross-feeding analytics. Omnipose segmentation with GPU acceleration; one
+    JSON config per experiment, one CLI and web app to drive every stage.
+  categories: [Python, image analysis, microfluidics, author]
+
+- title: plate-functions
+  description: >-
+    R functions for 96-well plate-reader growth curves: log-linear
+    sliding-window maximum growth rate, per-well yield / AUC / lag / carrying
+    capacity, blank correction, time-grid sanity checks and per-plate parameter
+    diagnostics. Shared as a git submodule across several lab projects.
+  categories: [R, growth curves, plate reader, author]
+  # TODO: repository is currently private — add `path:` once it is public.
+
+- title: ChiBio (fork)
+  path: https://github.com/cxen/ChiBio
+  description: >-
+    Fork of the open-source ChiBio bioreactor platform with additions for
+    OD dilution-series calibration, timed dosing schedules, fluorescence-assisted
+    OD control and measurement-mutex fixes for the device's read/write sequences.
+  categories: [Python, bioreactor, hardware, contributor]

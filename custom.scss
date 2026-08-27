@@ -1,0 +1,122 @@
+/*-- scss:defaults --*/
+
+// Restrained teal accent layered on flatly / darkly.
+$accent: #1b7f79;
+
+$link-color: $accent;
+
+$font-size-root: 17px;
+$line-height-base: 1.6;
+$headings-font-weight: 600;
+
+/*-- scss:rules --*/
+
+// Navbar: quiet, but opaque — it is pinned, so it must cover scrolled content.
+// Quarto sets data-bs-theme="dark" on the <nav> (flatly's default navbar is dark), which
+// makes runtime vars like --bs-body-bg resolve to the dark palette even in light mode.
+// So use the compile-time $body-bg / $body-color, which are correct per theme, and
+// override Bootstrap's navbar colour vars (incl. the hamburger icon) on the nav itself.
+.navbar, .navbar[data-bs-theme] {
+  background-color: rgba($body-bg, 0.9) !important;
+  @supports (backdrop-filter: blur(1px)) {
+    backdrop-filter: saturate(160%) blur(10px);
+    -webkit-backdrop-filter: saturate(160%) blur(10px);
+  }
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  --bs-navbar-color: #{$body-color};
+  --bs-navbar-hover-color: #{$accent};
+  --bs-navbar-active-color: #{$accent};
+  --bs-navbar-brand-color: #{$body-color};
+  --bs-navbar-brand-hover-color: #{$accent};
+  --bs-navbar-toggler-border-color: #{rgba($body-color, 0.15)};
+  --bs-navbar-toggler-icon-bg: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{rgba($body-color, 0.8)}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>"))};
+  .navbar-brand { font-weight: 600; letter-spacing: 0.01em; color: $body-color; }
+  .nav-link { font-weight: 500; color: $body-color; }
+  .nav-link:hover, .nav-link.active { color: $accent !important; }
+  // Quarto paints the search icon and theme toggle with $navbar-fg (derived from the
+  // theme's default navbar colour, wrong here) — repaint them with the body colour.
+  .quarto-navbar-tools .quarto-navigation-tool,
+  .aa-DetachedSearchButton .aa-DetachedSearchButtonIcon,
+  .aa-DetachedSearchButton .aa-DetachedSearchButtonIcon svg,
+  #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon { color: $body-color; }
+  .quarto-navbar-tools .quarto-navigation-tool:hover { color: $accent; }
+  .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+    background-image: escape-svg(url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$body-color}" class="bi bi-toggle-off" viewBox="0 0 16 16"><path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/></svg>'));
+  }
+  .quarto-color-scheme-toggle.alternate .bi::before {
+    background-image: escape-svg(url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$body-color}" class="bi bi-toggle-on" viewBox="0 0 16 16"><path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>'));
+  }
+}
+
+// Homepage (about page, trestles template).
+.quarto-about-trestles {
+  .about-entity {
+    .about-image { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+    .about-links { justify-content: center; gap: 0.35rem; }
+    .about-link {
+      border: 1px solid rgba(128, 128, 128, 0.35);
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.9rem;
+      color: var(--bs-body-color);
+      &:hover { border-color: $accent; color: $accent; }
+    }
+  }
+  .about-contents h1 { font-size: 2.1rem; margin-top: 0; }
+  .about-contents .lead { font-size: 1.15rem; color: var(--bs-secondary-color); margin-bottom: 1.5rem; }
+}
+
+// Accent bar under h2 on content pages.
+main h2 {
+  overflow: hidden; // own formatting context, so the underline stops at a floated portrait
+  font-size: 1.45rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid $accent;
+  margin-top: 2.2rem;
+}
+
+// Bibliography entries: hang the indent and space them out.
+#refs .csl-entry {
+  margin-bottom: 1rem;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+// Software listing cards.
+.quarto-listing .card {
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  transition: border-color 0.15s ease;
+  &:hover { border-color: $accent; }
+  .card-title { font-weight: 600; }
+  .listing-categories .listing-category { border-color: rgba(128, 128, 128, 0.35); }
+}
+
+// CV: portrait floated beside the title.
+.cv-photo {
+  float: right;
+  width: 8.5rem;
+  height: 8.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: -3.5rem 0 1rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 576px) {
+  .cv-photo { float: none; display: block; margin: 0 auto 1rem; }
+}
+
+// CV: date | entry rows built from Quarto .columns divs (work in HTML and Typst).
+.columns.cv-entry {
+  display: flex !important; // flex box narrows beside a float instead of wrapping its columns
+  margin-bottom: 1.5rem !important;
+  .column { flex: 0 0 auto; }
+  .column:last-child { flex: 1 1 0; width: auto !important; }
+  .cv-when { color: var(--bs-secondary-color); font-variant-numeric: tabular-nums; padding-right: 0.75rem; }
+  p { margin-bottom: 0.15rem; }
+  .cv-detail { display: block; color: var(--bs-secondary-color); font-size: 0.93em; }
+}
+@media (max-width: 576px) {
+  .columns.cv-entry { flex-direction: column; .column { width: 100% !important; flex: none; } }
+}
+
+.page-footer { font-size: 0.9rem; }

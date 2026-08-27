@@ -1,0 +1,13 @@
+---
+title: "Publications"
+nocite: '@*'
+---
+
+<!-- Entries are generated from references.bib via the APA-CV style in
+     assets/apa-cv.csl. Add a BibTeX entry there to add a paper here. -->
+
+Peer-reviewed articles. Preprints and full record on
+[ORCID](https://orcid.org/0000-0001-9340-9566).
+
+::: {#refs}
+:::

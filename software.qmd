@@ -1,0 +1,20 @@
+---
+title: "Software"
+listing:
+  id: software
+  contents: software.yml
+  type: grid
+  grid-columns: 2
+  sort: false
+  max-description-length: 1000
+  fields: [title, description, categories]
+  filter-ui: false
+  sort-ui: false
+---
+
+Tools I have written or contributed to for analysing bacterial growth — in plate
+readers, microfluidic chambers and bioreactors. Everything linked here is on
+[GitHub](https://github.com/cxen).
+
+::: {#software}
+:::

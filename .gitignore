@@ -6,3 +6,8 @@ TODO.md
 NOTES.md
 
 **/*.quarto_ipynb
+
+*.typ
+
+# Full-size photo originals; web-sized copies live in images/
+/_photos/

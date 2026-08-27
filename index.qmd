@@ -1,11 +1,51 @@
 ---
-title: ""
+title: "Constantinos Xenophontos"
+subtitle: "Postdoctoral researcher · microbial ecology"
+image: images/profile.jpg
+image-alt: "Portrait of Constantinos Xenophontos"
+about:
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/cxen
+    - text: "{{< ai orcid >}} ORCID"
+      href: https://orcid.org/0000-0001-9340-9566
+    - text: "{{< ai google-scholar >}} Scholar"
+      href: https://scholar.google.com/citations?user=dGgTnyUAAAAJ
+    - icon: envelope
+      text: Email
+      href: mailto:constantinos.xenophontos@gmail.com
 ---
 
-## Constantinos Xenophontos
+<!-- Bio draft (Aug 2026): grounded in ORCID, the 2022 CV repo, and public GitHub.
+     Current-work sentences are deliberately broad — tighten or add the
+     unpublished directions (EVs/LIPUS, bile acids) only if you want them public. -->
 
-<!-- TODO: one-line role + affiliation, e.g. "PhD candidate studying bacterial antibiotic tolerance at X" -->
+I am a microbial ecologist working as a postdoctoral researcher in
+Gabriele Micali's Microbial Ecology Lab at
+[IRCCS Humanitas Research Hospital](https://www.humanitas.net/) in Milan.
+I study how bacteria grow and interact — how cross-feeding, cooperation and
+cheating shape the composition of small communities, and how those interactions
+change the way populations respond to antibiotics.
 
-<!-- TODO: 2-4 sentence bio / research pitch -->
+My work sits between the bench and the terminal: I run growth experiments in
+plate readers, microfluidic chambers and continuous-culture bioreactors, and I
+write the analysis pipelines that turn those time-series into growth rates,
+lineages and dose–response curves. Most of that code is open — see
+[Software](software.qmd).
 
-<!-- TODO: contact links (Google Scholar, ORCID, GitHub, email) -->
+I did my doctoral research in microbial ecology at Friedrich Schiller
+University Jena and the German Centre for Integrative Biodiversity Research
+(iDiv), where I tested ecological theory with synthetic bacterial communities and models of
+public-goods "cheating". Before that I trained in ecology and evolution at
+Imperial College London and in biology at the University of Hull.
+
+## Interests
+
+- Microbial interactions: cross-feeding, public goods, cooperation and cheating
+- Bacterial growth dynamics and antibiotic tolerance
+- Quantitative methods for growth-curve, timelapse and bioreactor data
+- Open, reproducible analysis tooling in R and Python
