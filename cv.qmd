@@ -59,7 +59,9 @@ Since 2023
 ::: {.column width="84%"}
 **PhD researcher**, Friedrich Schiller University Jena & German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig, Germany
 
-[Dissertation: *Testing ecological theories with microbial communities*. Supervisors: Prof. Dr. Kirsten Küsel, Prof. Dr. W. Stanley Harpole.]{.cv-detail}
+[Dissertation: *Testing ecological theories with microbial communities*.]{.cv-detail}
+
+[Supervisors: Prof. Dr. Kirsten Küsel, Prof. Dr. W. Stanley Harpole.]{.cv-detail}
 
 <!-- TODO: add award year once the degree is conferred -->
 :::
@@ -72,7 +74,9 @@ Since 2023
 ::: {.column width="84%"}
 **MRes Ecology, Evolution & Conservation** (Merit), Imperial College London, UK
 
-[Thesis 1: *Variation in behaviour and resistance to fungal endoparasites between closely related clones of the anciently asexual rotifer* Adineta vaga. Thesis 2: *Effects and interactions on phenotypic trajectories and metabolic activity of community bacteria*.]{.cv-detail}
+[Thesis 1: *Variation in behaviour and resistance to fungal endoparasites between closely related clones of the anciently asexual rotifer Adineta vaga*.]{.cv-detail}
+
+[Thesis 2: *Effects and interactions on phenotypic trajectories and metabolic activity of community bacteria*.]{.cv-detail}
 :::
 :::::
 
@@ -144,7 +148,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 ::: {.column width="84%"}
 **BES Annual Meeting 2019** — oral presentation
 
-[*Phylogenetic and functional dissimilarity have contrasting effects on the ecological functioning of synthetic bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K. [Poster: doi:10.13140/RG.2.2.16123.67361](https://doi.org/10.13140/RG.2.2.16123.67361)]{.cv-detail}
+[*Phylogenetic and functional dissimilarity have contrasting effects on the ecological functioning of synthetic bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K. [doi:10.13140/RG.2.2.16123.67361](https://doi.org/10.13140/RG.2.2.16123.67361)]{.cv-detail}
 :::
 :::::
 
@@ -318,4 +322,4 @@ yDiv Doctoral Programme studentship, German Centre for Integrative Biodiversity 
 - **Programming:** R (incl. Quarto), Python (incl. marimo notebooks), Julia; Git and GitHub version control
 - **3D printing and design:** PrusaSlicer, BambuStudio, Fusion 360, Meshmixer
 - **Operating systems:** Windows, macOS, Linux
-- **Microsoft Office:** Word, Excel, PowerPoint, Access
+- **Microsoft Office:** Word, Excel, PowerPoint
