@@ -29,7 +29,7 @@ other-links:
 ::: {.content-visible when-format="typst"}
 ::: {.cv-contact}
 Postdoctoral researcher, IRCCS Humanitas Research Hospital, Milan\
-[c_x_\@outlook.com](mailto:c_x_@outlook.com) · [orcid.org/0000-0001-9340-9566](https://orcid.org/0000-0001-9340-9566)\
+[c_xen\@outlook.com](mailto:c_xen@outlook.com) · [orcid.org/0000-0001-9340-9566](https://orcid.org/0000-0001-9340-9566)\
 [github.com/cxen](https://github.com/cxen) · [cxen.github.io](https://cxen.github.io)
 :::
 :::
