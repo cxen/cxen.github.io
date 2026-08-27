@@ -357,7 +357,7 @@ window.Quarto = {
 <span class="menu-text"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:constantinos.xenophontos@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="Email">
+    <a class="nav-link" href="./#email"> <i class="bi bi-envelope" role="img" aria-label="Email">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -480,6 +480,32 @@ ChiBio (fork)
 
 
 </main> <!-- /main -->
+<!-- Contact e-mail obfuscation: the address never appears in the HTML source.
+     Links with href="#email" get a real mailto: built in the browser from a ROT13 string,
+     so plain-text scrapers that grep the page for "@" find nothing. -->
+<script>
+(function () {
+  var rot13 = function (s) {
+    return s.replace(/[a-zA-Z]/g, function (c) {
+      return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+    });
+  };
+  var addr = rot13("p_kra@bhgybbx.pbz");
+  // Quarto's nav script turns "#email" into an absolute URL ending in "#email", and runs
+  // after this snippet, so match on the suffix and wait for DOMContentLoaded.
+  var patch = function () {
+    document.querySelectorAll('a[href$="#email"]').forEach(function (a) {
+      a.setAttribute("href", "mailto:" + addr);
+      a.removeAttribute("target");
+    });
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", patch);
+  } else {
+    patch();
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
