@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Tools I have written or contributed to for analysing bacterial growth — in plate readers, microfluidic chambers and bioreactors. Everything linked here is on GitHub.\n\n\n\n\n\n\n\nFriendChip\n\n\n\nPython\n\nimage analysis\n\nmicrofluidics\n\nauthor\n\n\n\nConfig-first Python pipeline for microfluidics timelapse image analysis — from raw Leica .lif and Nikon .nd2 files through segmentation, tracking and lineage reconstruction to growth rates, dose–response curves and spatial cross-feeding analytics. Omnipose segmentation with GPU acceleration; one JSON config per experiment, one CLI and web app to drive every stage.\n\n\n\n\n\n\n\n\n\nplate-functions\n\n\n\nR\n\ngrowth curves\n\nplate reader\n\nauthor\n\n\n\nR functions for 96-well plate-reader growth curves: log-linear sliding-window maximum growth rate, per-well yield / AUC / lag / carrying capacity, blank correction, time-grid sanity checks and per-plate parameter diagnostics. Shared as a git submodule across several lab projects.\n\n\n\n\n\n\n\n\n\nChiBio (fork)\n\n\n\nPython\n\nbioreactor\n\nhardware\n\ncontributor\n\n\n\nFork of the open-source ChiBio bioreactor platform with additions for OD dilution-series calibration, timed dosing schedules, fluorescence-assisted OD control and measurement-mutex fixes for the device’s read/write sequences.\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Constantinos Xenophontos",
+    "section": "",
+    "text": "I am a microbial ecologist working as a postdoctoral researcher in Gabriele Micali’s Microbial Ecology Lab at IRCCS Humanitas Research Hospital in Milan. I study how bacteria grow and interact — how cross-feeding, cooperation and cheating shape the composition of small communities, and how those interactions change the way populations respond to antibiotics.\nMy work sits between the bench and the terminal: I run growth experiments in plate readers, microfluidic chambers and continuous-culture bioreactors, and I write the analysis pipelines that turn those time-series into growth rates, lineages and dose–response curves. Most of that code is open — see Software.\nI did my doctoral research in microbial ecology at Friedrich Schiller University Jena and the German Centre for Integrative Biodiversity Research (iDiv), where I tested ecological theory with synthetic bacterial communities and models of public-goods “cheating”. Before that I trained in ecology and evolution at Imperial College London and in biology at the University of Hull."
+  },
+  {
+    "objectID": "index.html#interests",
+    "href": "index.html#interests",
+    "title": "Constantinos Xenophontos",
+    "section": "Interests",
+    "text": "Interests\n\nMicrobial interactions: cross-feeding, public goods, cooperation and cheating\nBacterial growth dynamics and antibiotic tolerance\nQuantitative methods for growth-curve, timelapse and bioreactor data\nOpen, reproducible analysis tooling in R and Python"
+  },
+  {
+    "objectID": "cv.html#employment",
+    "href": "cv.html#employment",
+    "title": "Curriculum Vitae",
+    "section": "Employment",
+    "text": "Employment\n\n\nSince 2023\n\nPostdoctoral researcher, IRCCS Humanitas Research Hospital, Milan, Italy\nPI: Dr. Gabriele Micali, Microbial Ecology Lab"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\n\n2016 – 2020\n\nPhD researcher, Friedrich Schiller University Jena & German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig, Germany\nDissertation: Testing ecological theories with microbial communities. Supervisors: Prof. Dr. Kirsten Küsel, Prof. Dr. W. Stanley Harpole.\n\n\n\n\n\n2014 – 2015\n\nMRes Ecology, Evolution & Conservation (Merit), Imperial College London, UK\nThesis 1: Variation in behaviour and resistance to fungal endoparasites between closely related clones of the anciently asexual rotifer Adineta vaga. Thesis 2: Effects and interactions on phenotypic trajectories and metabolic activity of community bacteria.\n\n\n\n\n2010 – 2014\n\nBSc (Hons) Biology (2:1), University of Hull, UK\nTeam research project in ecology, DNA barcoding and bioinformatics: Is soil mesofauna abundance and diversity related to farming methods?"
+  },
+  {
+    "objectID": "cv.html#publications",
+    "href": "cv.html#publications",
+    "title": "Curriculum Vitae",
+    "section": "Publications",
+    "text": "Publications\n\n\nXenophontos, C., Harpole, W. S., Küsel, K., & Clark, A. T. (2022). Cheating promotes coexistence in a two-species one-substrate culture model. Frontiers in Ecology and Evolution, 9, 786006. https://doi.org/10.3389/fevo.2021.786006\n\n\nXenophontos, C., Taubert, M., Harpole, W. S., & Küsel, K. (2021). Phylogenetic and metabolic diversity have contrasting effects on the ecological functioning of bacterial communities. FEMS Microbiology Ecology, 97(3), fiab017. https://doi.org/10.1093/femsec/fiab017\n\n\nThe 2021 FEMS Microbiology Ecology article was selected as an Editor’s Choice."
+  },
+  {
+    "objectID": "cv.html#conference-presentations",
+    "href": "cv.html#conference-presentations",
+    "title": "Curriculum Vitae",
+    "section": "Conference presentations",
+    "text": "Conference presentations\n\n\n2026 May\n\nMicrofluidic Horizons 2026 — oral presentation\n\n\n\n\n2025 Dec\n\nBES Annual Meeting 2025 — poster presentation\n\n\n\n\n2025 Jul\n\nFEMS Micro 2025 — oral and poster presentations\nStronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding. Xenophontos C., Vaidyanathan A., Micali G.\n\n\n\n\n2020 Dec\n\nISME Virtual Microbial Ecology Summit — poster presentation\nCoexisting with cheaters: microbial cheating as a snowdrift game model. Xenophontos C., Harpole W.S., Küsel K., Clark A.T. doi:10.13140/RG.2.2.36728.26886\n\n\n\n\n2019 Dec\n\nBES Annual Meeting 2019 — oral presentation\nPhylogenetic and functional dissimilarity have contrasting effects on the ecological functioning of synthetic bacterial communities. Xenophontos C., Taubert M., Harpole W.S., Küsel K. Poster: doi:10.13140/RG.2.2.16123.67361\n\n\n\n\n2019 Sep\n\nSAME16 — poster presentation\n\n\n\n\n2019 Aug\n\n5th iDiv Conference — poster presentation\n\n\n\n\n2018 Dec\n\n4th iDiv Conference — oral presentation\nSpecies phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities. Xenophontos C., Taubert M., Harpole W.S., Küsel K.\n\n\n\n\n2018 Aug\n\nISME17 — poster presentation\nSpecies phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities. Xenophontos C., Taubert M., Harpole W.S., Küsel K.\n\n\n\n\n2017 Sep\n\n3rd iDiv Conference — poster presentation\nShifts in ecological functioning of groundwater bacteria driven by species interactions. Xenophontos C., Geesink P., Kumar S., Wegner C.-E., Harpole W.S., Küsel K. doi:10.13140/RG.2.2.24728.49929"
+  },
+  {
+    "objectID": "cv.html#teaching-and-supervision",
+    "href": "cv.html#teaching-and-supervision",
+    "title": "Curriculum Vitae",
+    "section": "Teaching and supervision",
+    "text": "Teaching and supervision\n\n\nSince 2023\n\nCo-supervision of PhD and MSc students with Dr. Micali (lab work and data analysis), IRCCS Humanitas Research Hospital\n\n\n\n\n2019 May\n\nSoil DNA extraction and PCR practical course, Friedrich Schiller University Jena"
+  },
+  {
+    "objectID": "cv.html#academic-service",
+    "href": "cv.html#academic-service",
+    "title": "Curriculum Vitae",
+    "section": "Academic service",
+    "text": "Academic service\n\n\n2026\n\nMicrofluidic Horizons 2026 — organising committee\nSocial media and communications; session moderator"
+  },
+  {
+    "objectID": "cv.html#outreach",
+    "href": "cv.html#outreach",
+    "title": "Curriculum Vitae",
+    "section": "Outreach",
+    "text": "Outreach\n\n\n2023\n\nExpo per lo Sport, public event — Humanitas booth, Milan\nDNA-extraction instructor for children\n\n\n\n\n2022\n\nHolobiontinnen, art performance exhibit, Leipzig (LOFFT, Ballhaus Ost)\nConsulting microbiologist\n\n\n\n\n2019\n\nLong Night of Sciences, public event, Jena\nInstructor, microbiology art for children"
+  },
+  {
+    "objectID": "cv.html#grants-awards-and-studentships",
+    "href": "cv.html#grants-awards-and-studentships",
+    "title": "Curriculum Vitae",
+    "section": "Grants, awards and studentships",
+    "text": "Grants, awards and studentships\n\n\n2023\n\nEMBO Postdoctoral Fellowship — unsuccessful, post-interview stage\n\n\n\n\n2023\n\nHFSP Long-Term Fellowship — unsuccessful\n\n\n\n\n2019\n\nSAME16 conference travel grant\n\n\n\n\n2016\n\nyDiv Doctoral Programme studentship, German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig"
+  },
+  {
+    "objectID": "cv.html#societies",
+    "href": "cv.html#societies",
+    "title": "Curriculum Vitae",
+    "section": "Societies",
+    "text": "Societies\n\nInternational Society for Microbial Ecology (ISME) — member\nRoyal Society of Biology (RSB) — member (MRSB)\nBritish Ecological Society (BES) — member\nFederation of European Microbiological Societies (FEMS) — affiliate member\nSociety for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE) — member"
+  },
+  {
+    "objectID": "cv.html#skills",
+    "href": "cv.html#skills",
+    "title": "Curriculum Vitae",
+    "section": "Skills",
+    "text": "Skills\n\nProgramming: R (incl. Quarto), Python (incl. marimo notebooks), Julia; Git and GitHub version control\n3D printing and design: PrusaSlicer, BambuStudio, Fusion 360, Meshmixer\nOperating systems: Windows, macOS, Linux\nMicrosoft Office: Word, Excel, PowerPoint, Access"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Peer-reviewed articles. Preprints and full record on ORCID.\n\n\nXenophontos, C., Harpole, W. S., Küsel, K., & Clark, A. T. (2022). Cheating promotes coexistence in a two-species one-substrate culture model. Frontiers in Ecology and Evolution, 9, 786006. https://doi.org/10.3389/fevo.2021.786006\n\n\nXenophontos, C., Taubert, M., Harpole, W. S., & Küsel, K. (2021). Phylogenetic and metabolic diversity have contrasting effects on the ecological functioning of bacterial communities. FEMS Microbiology Ecology, 97(3), fiab017. https://doi.org/10.1093/femsec/fiab017"
+  }
+]

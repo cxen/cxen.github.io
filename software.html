@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curriculum Vitae – Constantinos Xenophontos</title>
+<title>Software – Constantinos Xenophontos</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,27 +26,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -55,6 +35,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -98,17 +80,73 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-software .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-software'] = new List('listing-software', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Curriculum Vitae – Constantinos Xenophontos">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Software – Constantinos Xenophontos">
 <meta property="og:description" content="Microbial ecologist studying bacterial growth, interactions and antibiotic tolerance.">
-<meta property="og:image" content="https://cxen.github.io/images/profile.jpg">
 <meta property="og:site_name" content="Constantinos Xenophontos">
-<meta property="og:image:alt" content="Portrait of Constantinos Xenophontos">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -296,11 +334,11 @@ div.csl-indent {
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./software.html"> 
+    <a class="nav-link active" href="./software.html" aria-current="page"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./cv.html" aria-current="page"> 
+    <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -335,15 +373,14 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="Constantinos-Xenophontos-CV.pdf"><i class="bi bi-file-earmark-pdf"></i>Download PDF</a></li></ul></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curriculum Vitae</h1>
+<h1 class="title">Software</h1>
 </div>
 
 
@@ -360,246 +397,87 @@ div.csl-indent {
 </header>
 
 
-<p><img src="images/profile.jpg" class="cv-photo img-fluid" alt="Portrait of Constantinos Xenophontos"></p>
-<!-- Source of truth: ~/Documents/Academia/_. Curriculum Vitae/CV_Constantinos Xenophontos_v3.4.md
-     (mirrored 2026-08-27). Referees are deliberately omitted from the public site. -->
-<section id="employment" class="level2">
-<h2 class="anchored" data-anchor-id="employment">Employment</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>Since 2023</p>
-</div><div class="column" style="width:84%;">
-<p><strong>Postdoctoral researcher</strong>, IRCCS Humanitas Research Hospital, Milan, Italy</p>
-<p><span class="cv-detail">PI: Dr.&nbsp;Gabriele Micali, Microbial Ecology Lab</span></p>
+<p>Tools I have written or contributed to for analysing bacterial growth — in plate readers, microfluidic chambers and bioreactors. Everything linked here is on <a href="https://github.com/cxen">GitHub</a>.</p>
+<div id="listing-software" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-2">
+<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDaW1hZ2UlMjBhbmFseXNpcyUyQ21pY3JvZmx1aWRpY3MlMkNhdXRob3I=">
+<a href="https://github.com/cxen/FriendChip" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+FriendChip
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aW1hZ2UlMjBhbmFseXNpcw=='); return false;">image analysis</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWljcm9mbHVpZGljcw=='); return false;">microfluidics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YXV0aG9y'); return false;">author</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Config-first Python pipeline for microfluidics timelapse image analysis — from raw Leica .lif and Nikon .nd2 files through segmentation, tracking and lineage reconstruction to growth rates, dose–response curves and spatial cross-feeding analytics. Omnipose segmentation with GPU acceleration; one JSON config per experiment, one CLI and web app to drive every stage.</p>
 </div>
 </div>
-</section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2016 – 2020</p>
-</div><div class="column" style="width:84%;">
-<p><strong>PhD researcher</strong>, Friedrich Schiller University Jena &amp; German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig, Germany</p>
-<p><span class="cv-detail">Dissertation: <em>Testing ecological theories with microbial communities</em>. Supervisors: Prof.&nbsp;Dr.&nbsp;Kirsten Küsel, Prof.&nbsp;Dr.&nbsp;W. Stanley Harpole.</span></p>
-<!-- TODO: add award year once the degree is conferred -->
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="UiUyQ2dyb3d0aCUyMGN1cnZlcyUyQ3BsYXRlJTIwcmVhZGVyJTJDYXV0aG9y">
+<a href="" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+plate-functions
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3Jvd3RoJTIwY3VydmVz'); return false;">growth curves</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cGxhdGUlMjByZWFkZXI='); return false;">plate reader</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YXV0aG9y'); return false;">author</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>R functions for 96-well plate-reader growth curves: log-linear sliding-window maximum growth rate, per-well yield / AUC / lag / carrying capacity, blank correction, time-grid sanity checks and per-plate parameter diagnostics. Shared as a git submodule across several lab projects.</p>
 </div>
 </div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2014 – 2015</p>
-</div><div class="column" style="width:84%;">
-<p><strong>MRes Ecology, Evolution &amp; Conservation</strong> (Merit), Imperial College London, UK</p>
-<p><span class="cv-detail">Thesis 1: <em>Variation in behaviour and resistance to fungal endoparasites between closely related clones of the anciently asexual rotifer</em> Adineta vaga. Thesis 2: <em>Effects and interactions on phenotypic trajectories and metabolic activity of community bacteria</em>.</span></p>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="UHl0aG9uJTJDYmlvcmVhY3RvciUyQ2hhcmR3YXJlJTJDY29udHJpYnV0b3I=">
+<a href="https://github.com/cxen/ChiBio" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+ChiBio (fork)
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('YmlvcmVhY3Rvcg=='); return false;">bioreactor</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('aGFyZHdhcmU='); return false;">hardware</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29udHJpYnV0b3I='); return false;">contributor</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Fork of the open-source ChiBio bioreactor platform with additions for OD dilution-series calibration, timed dosing schedules, fluorescence-assisted OD control and measurement-mutex fixes for the device’s read/write sequences.</p>
 </div>
 </div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2010 – 2014</p>
-</div><div class="column" style="width:84%;">
-<p><strong>BSc (Hons) Biology</strong> (2:1), University of Hull, UK</p>
-<p><span class="cv-detail">Team research project in ecology, DNA barcoding and bioinformatics: <em>Is soil mesofauna abundance and diversity related to farming methods?</em></span></p>
+</div></a>
 </div>
 </div>
-</section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-Xenophontos2022" class="csl-entry" role="listitem">
-Xenophontos, C., Harpole, W. S., Küsel, K., &amp; Clark, A. T. (2022). Cheating promotes coexistence in a two-species one-substrate culture model. <em>Frontiers in Ecology and Evolution</em>, <em>9</em>, 786006. <a href="https://doi.org/10.3389/fevo.2021.786006">https://doi.org/10.3389/fevo.2021.786006</a>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
-<div id="ref-Xenophontos2021" class="csl-entry" role="listitem">
-Xenophontos, C., Taubert, M., Harpole, W. S., &amp; Küsel, K. (2021). Phylogenetic and metabolic diversity have contrasting effects on the ecological functioning of bacterial communities. <em>FEMS Microbiology Ecology</em>, <em>97</em>(3), fiab017. <a href="https://doi.org/10.1093/femsec/fiab017">https://doi.org/10.1093/femsec/fiab017</a>
-</div>
-</div>
-<p>The 2021 <em>FEMS Microbiology Ecology</em> article was selected as an <a href="https://twitter.com/FEMSmicro/status/1397832504518795267">Editor’s Choice</a>.</p>
-</section>
-<section id="conference-presentations" class="level2">
-<h2 class="anchored" data-anchor-id="conference-presentations">Conference presentations</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2026 May</p>
-</div><div class="column" style="width:84%;">
-<p><strong>Microfluidic Horizons 2026</strong> — oral presentation</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2025 Dec</p>
-</div><div class="column" style="width:84%;">
-<p><strong>BES Annual Meeting 2025</strong> — poster presentation</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2025 Jul</p>
-</div><div class="column" style="width:84%;">
-<p><strong>FEMS Micro 2025</strong> — oral and poster presentations</p>
-<p><span class="cv-detail"><em>Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding.</em> Xenophontos C., Vaidyanathan A., Micali G.</span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2020 Dec</p>
-</div><div class="column" style="width:84%;">
-<p><strong>ISME Virtual Microbial Ecology Summit</strong> — poster presentation</p>
-<p><span class="cv-detail"><em>Coexisting with cheaters: microbial cheating as a snowdrift game model.</em> Xenophontos C., Harpole W.S., Küsel K., Clark A.T. <a href="https://doi.org/10.13140/RG.2.2.36728.26886">doi:10.13140/RG.2.2.36728.26886</a></span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019 Dec</p>
-</div><div class="column" style="width:84%;">
-<p><strong>BES Annual Meeting 2019</strong> — oral presentation</p>
-<p><span class="cv-detail"><em>Phylogenetic and functional dissimilarity have contrasting effects on the ecological functioning of synthetic bacterial communities.</em> Xenophontos C., Taubert M., Harpole W.S., Küsel K. <a href="https://doi.org/10.13140/RG.2.2.16123.67361">Poster: doi:10.13140/RG.2.2.16123.67361</a></span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019 Sep</p>
-</div><div class="column" style="width:84%;">
-<p><strong>SAME16</strong> — poster presentation</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019 Aug</p>
-</div><div class="column" style="width:84%;">
-<p><strong>5th iDiv Conference</strong> — poster presentation</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2018 Dec</p>
-</div><div class="column" style="width:84%;">
-<p><strong>4th iDiv Conference</strong> — oral presentation</p>
-<p><span class="cv-detail"><em>Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.</em> Xenophontos C., Taubert M., Harpole W.S., Küsel K.</span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2018 Aug</p>
-</div><div class="column" style="width:84%;">
-<p><strong>ISME17</strong> — poster presentation</p>
-<p><span class="cv-detail"><em>Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.</em> Xenophontos C., Taubert M., Harpole W.S., Küsel K.</span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2017 Sep</p>
-</div><div class="column" style="width:84%;">
-<p><strong>3rd iDiv Conference</strong> — poster presentation</p>
-<p><span class="cv-detail"><em>Shifts in ecological functioning of groundwater bacteria driven by species interactions.</em> Xenophontos C., Geesink P., Kumar S., Wegner C.-E., Harpole W.S., Küsel K. <a href="https://doi.org/10.13140/RG.2.2.24728.49929">doi:10.13140/RG.2.2.24728.49929</a></span></p>
-</div>
-</div>
-</section>
-<section id="teaching-and-supervision" class="level2">
-<h2 class="anchored" data-anchor-id="teaching-and-supervision">Teaching and supervision</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>Since 2023</p>
-</div><div class="column" style="width:84%;">
-<p>Co-supervision of PhD and MSc students with Dr.&nbsp;Micali (lab work and data analysis), IRCCS Humanitas Research Hospital</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019 May</p>
-</div><div class="column" style="width:84%;">
-<p>Soil DNA extraction and PCR practical course, Friedrich Schiller University Jena</p>
-</div>
-</div>
-</section>
-<section id="academic-service" class="level2">
-<h2 class="anchored" data-anchor-id="academic-service">Academic service</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2026</p>
-</div><div class="column" style="width:84%;">
-<p><strong>Microfluidic Horizons 2026</strong> — organising committee</p>
-<p><span class="cv-detail">Social media and communications; session moderator</span></p>
-</div>
-</div>
-</section>
-<section id="outreach" class="level2">
-<h2 class="anchored" data-anchor-id="outreach">Outreach</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2023</p>
-</div><div class="column" style="width:84%;">
-<p><em>Expo per lo Sport</em>, public event — Humanitas booth, Milan</p>
-<p><span class="cv-detail">DNA-extraction instructor for children</span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2022</p>
-</div><div class="column" style="width:84%;">
-<p><em>Holobiontinnen</em>, art performance exhibit, Leipzig (<a href="https://www.lofft.de/en/programme/event/holobiontinnen">LOFFT</a>, <a href="https://www.ballhausost.de/holobiontinnen/?lang=en">Ballhaus Ost</a>)</p>
-<p><span class="cv-detail">Consulting microbiologist</span></p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019</p>
-</div><div class="column" style="width:84%;">
-<p><em>Long Night of Sciences</em>, public event, Jena</p>
-<p><span class="cv-detail">Instructor, microbiology art for children</span></p>
-</div>
-</div>
-</section>
-<section id="grants-awards-and-studentships" class="level2">
-<h2 class="anchored" data-anchor-id="grants-awards-and-studentships">Grants, awards and studentships</h2>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2023</p>
-</div><div class="column" style="width:84%;">
-<p>EMBO Postdoctoral Fellowship — unsuccessful, post-interview stage</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2023</p>
-</div><div class="column" style="width:84%;">
-<p>HFSP Long-Term Fellowship — unsuccessful</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2019</p>
-</div><div class="column" style="width:84%;">
-<p>SAME16 conference travel grant</p>
-</div>
-</div>
-<div class="columns cv-entry">
-<div class="column cv-when" style="width:16%;">
-<p>2016</p>
-</div><div class="column" style="width:84%;">
-<p>yDiv Doctoral Programme studentship, German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig</p>
-</div>
-</div>
-</section>
-<section id="societies" class="level2">
-<h2 class="anchored" data-anchor-id="societies">Societies</h2>
-<ul>
-<li>International Society for Microbial Ecology (ISME) — member</li>
-<li>Royal Society of Biology (RSB) — member (MRSB)</li>
-<li>British Ecological Society (BES) — member</li>
-<li>Federation of European Microbiological Societies (FEMS) — affiliate member</li>
-<li>Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE) — member</li>
-</ul>
-</section>
-<section id="skills" class="level2">
-<h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<ul>
-<li><strong>Programming:</strong> R (incl.&nbsp;Quarto), Python (incl.&nbsp;marimo notebooks), Julia; Git and GitHub version control</li>
-<li><strong>3D printing and design:</strong> PrusaSlicer, BambuStudio, Fusion 360, Meshmixer</li>
-<li><strong>Operating systems:</strong> Windows, macOS, Linux</li>
-<li><strong>Microsoft Office:</strong> Word, Excel, PowerPoint, Access</li>
-</ul>
 
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

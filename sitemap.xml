@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cxen.github.io/cv.html</loc>
-    <lastmod>2026-08-27T11:01:26.003Z</lastmod>
+    <loc>https://cxen.github.io/software.html</loc>
+    <lastmod>2026-08-27T11:33:22.282Z</lastmod>
   </url>
   <url>
     <loc>https://cxen.github.io/index.html</loc>
-    <lastmod>2026-08-27T11:01:26.003Z</lastmod>
+    <lastmod>2026-08-27T16:05:27.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cxen.github.io/cv.html</loc>
+    <lastmod>2026-08-27T15:55:11.744Z</lastmod>
+  </url>
+  <url>
+    <loc>https://cxen.github.io/publications.html</loc>
+    <lastmod>2026-08-27T11:30:41.448Z</lastmod>
   </url>
 </urlset>
