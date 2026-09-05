@@ -1,6 +1,7 @@
 ---
 title: "Constantinos Xenophontos"
-subtitle: "Postdoctoral researcher · microbial ecology"
+subtitle: "Postdoctoral researcher in microbial ecology, Milan"
+description: "Microbial ecologist studying how bacteria grow, cooperate and cheat, and how those interactions change the way populations respond to antibiotics."
 image: images/profile.jpg
 image-alt: "Portrait of Constantinos Xenophontos"
 about:
@@ -20,28 +21,40 @@ about:
       href: "#email"   # resolved to a mailto: by assets/email.html
 ---
 
-<!-- Bio draft (Aug 2026): grounded in ORCID, the 2022 CV repo, and public GitHub.
-     Current-work sentences are deliberately broad — tighten or add the
-     unpublished directions (EVs/LIPUS, bile acids) only if you want them public. -->
+<!-- Bio (Aug 2026, revised Sep 2026): grounded in ORCID, the CV and public GitHub.
+     The tagline is the one-line research pitch that must stay in the first viewport.
+     Current-work sentences are deliberately broad; tighten or add the unpublished
+     directions (EVs/LIPUS, bile acids) only if you want them public. -->
 
-I am a microbial ecologist working as a postdoctoral researcher in
-Gabriele Micali's Microbial Ecology Lab at
-[IRCCS Humanitas Research Hospital](https://www.humanitas.net/) in Milan.
-I study how bacteria grow and interact — how cross-feeding, cooperation and
-cheating shape the composition of small communities, and how those interactions
-change the way populations respond to antibiotics.
+[How bacteria grow, cooperate and cheat, and how those interactions change the way
+populations respond to antibiotics.]{.tagline}
 
-My work sits between the bench and the terminal: I run growth experiments in
-plate readers, microfluidic chambers and continuous-culture bioreactors, and I
-write the analysis pipelines that turn those time-series into growth rates,
-lineages and dose–response curves. Most of that code is open — see
-[Software](software.qmd).
+I am a microbial ecologist and postdoctoral researcher in Gabriele Micali's Microbial
+Ecology Lab at [IRCCS Humanitas Research Hospital](https://www.humanitas.net/) in
+Milan. I work with small synthetic bacterial communities, asking how cross-feeding,
+public goods and cheating shape their composition, and what those interactions do to
+antibiotic tolerance.
 
-I did my doctoral research in microbial ecology at Friedrich Schiller
-University Jena and the German Centre for Integrative Biodiversity Research
-(iDiv), where I tested ecological theory with synthetic bacterial communities and models of
-public-goods "cheating". Before that I trained in ecology and evolution at
-Imperial College London and in biology at the University of Hull.
+I run growth experiments in plate readers, microfluidic chambers and
+continuous-culture bioreactors, and I write the analysis pipelines that turn those
+time series into growth rates, lineages and dose–response curves. The code is on the
+[Software](software.qmd) page.
+
+I did my doctoral research in microbial ecology at Friedrich Schiller University
+Jena and the German Centre for Integrative Biodiversity Research (iDiv), where I
+tested ecological theory with synthetic bacterial communities and models of
+public-goods cheating. Before that I trained in ecology and evolution at Imperial
+College London and in biology at the University of Hull.
+
+## Recent
+
+<!-- Keep to the three or four newest items; older ones live on the CV page. -->
+
+::: {.recent}
+- [May 2026]{.when} Talk at [Microfluidic Horizons 2026](cv.qmd#conference-presentations), where I also served on the organising committee.
+- [Dec 2025]{.when} Poster at the BES Annual Meeting 2025.
+- [Jul 2025]{.when} Talk and poster at FEMS Micro 2025: *Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding*.
+:::
 
 ## Interests
 

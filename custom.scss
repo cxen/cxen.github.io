@@ -1,6 +1,8 @@
 /*-- scss:defaults --*/
 
-// Restrained teal accent layered on flatly / darkly.
+// Restrained teal accent layered on flatly / darkly. The light value is the brand;
+// the dark theme gets a lighter step of the same hue (see scss:rules) so links keep
+// WCAG AA contrast on the dark background.
 $accent: #1b7f79;
 
 $link-color: $accent;
@@ -9,7 +11,48 @@ $font-size-root: 17px;
 $line-height-base: 1.6;
 $headings-font-weight: 600;
 
+// Lato is self-hosted from fonts/ (below) instead of fetched from Google Fonts.
+$web-font-path: false;
+
 /*-- scss:rules --*/
+
+@font-face {
+  font-family: "Lato"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/lato-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lato"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("fonts/lato-400-italic-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lato"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/lato-700-latin.woff2") format("woff2");
+}
+
+// Dark theme: lift the accent so link text on the dark background passes AA
+// (#1b7f79 on #222 is 3.3:1; #45b5ad is 6.4:1). $body-bg is only known here, in
+// rules, because Quarto layers custom defaults *before* the theme's.
+@if lightness($body-bg) < 50% {
+  $accent: #45b5ad !global;
+}
+:root, [data-bs-theme] {
+  --bs-link-color: #{$accent};
+  --bs-link-color-rgb: #{red($accent)}, #{green($accent)}, #{blue($accent)};
+  --bs-link-hover-color: #{if(lightness($body-bg) < 50%, lighten($accent, 10%), darken($accent, 10%))};
+}
+a:focus-visible, button:focus-visible, .about-link:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+// Page `description:` is for the <meta> tag and search snippets only; Quarto also
+// prints it under the title, which would duplicate the tagline and CV intro.
+.quarto-title-block .description, .about-entity .description { display: none; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
 
 // Navbar: quiet, but opaque — it is pinned, so it must cover scrolled content.
 // Quarto sets data-bs-theme="dark" on the <nav> (flatly's default navbar is dark), which
@@ -47,11 +90,17 @@ $headings-font-weight: 600;
     background-image: escape-svg(url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{$body-color}" class="bi bi-toggle-on" viewBox="0 0 16 16"><path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>'));
   }
 }
+@media (max-width: 576px) {
+  // Full name in the brand truncates at phone width next to the hamburger and tools.
+  .navbar .navbar-brand { font-size: 1rem; }
+}
 
 // Homepage (about page, trestles template).
 .quarto-about-trestles {
   .about-entity {
     .about-image { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+    h1.title { font-size: 2.1rem; line-height: 1.15; margin-bottom: 0.4rem; }
+    .subtitle { font-size: 1rem; color: var(--bs-secondary-color); line-height: 1.4; }
     .about-links { justify-content: center; gap: 0.35rem; }
     .about-link {
       border: 1px solid rgba(128, 128, 128, 0.35);
@@ -59,16 +108,52 @@ $headings-font-weight: 600;
       padding: 0.3rem 0.8rem;
       font-size: 0.9rem;
       color: var(--bs-body-color);
+      transition: border-color 0.15s ease, color 0.15s ease;
       &:hover { border-color: $accent; color: $accent; }
     }
   }
   .about-contents h1 { font-size: 2.1rem; margin-top: 0; }
-  .about-contents .lead { font-size: 1.15rem; color: var(--bs-secondary-color); margin-bottom: 1.5rem; }
+}
+@media (max-width: 991px) {
+  // Below the two-column breakpoint Quarto stacks the links full-width, four rows deep,
+  // which pushes the research pitch under the fold. Two per row instead.
+  .quarto-about-trestles .about-entity .about-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+  .quarto-about-trestles .about-entity .about-link { margin: 0; text-align: center; }
 }
 
-// Accent bar under h2 on content pages.
-main h2 {
-  overflow: hidden; // own formatting context, so the underline stops at a floated portrait
+// Research pitch: the first line of the body, sized between subtitle and body copy.
+.tagline {
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: var(--bs-body-color);
+}
+
+// "Recent" list on the homepage: date | item rows.
+.recent {
+  ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+  li { padding-left: 6em; text-indent: -6em; margin-bottom: 0.6rem; } // hanging date column
+  .when {
+    display: inline-block;
+    width: 5.5em;
+    margin-right: 0.5em;
+    text-indent: 0;
+    color: var(--bs-secondary-color);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+}
+
+// Accent bar under h2 on every content page (the about page keeps its h2s inside
+// .about-contents rather than directly under main).
+main h2, .about-contents h2 {
   font-size: 1.45rem;
   padding-bottom: 0.3rem;
   border-bottom: 2px solid $accent;
@@ -76,30 +161,51 @@ main h2 {
 }
 
 // Bibliography entries: hang the indent and space them out.
-#refs .csl-entry {
+[id^="refs"] .csl-entry {
   margin-bottom: 1rem;
   padding-left: 1.5em;
   text-indent: -1.5em;
 }
+.pub-note { color: var(--bs-secondary-color); font-size: 0.95em; }
 
 // Software listing cards.
 .quarto-listing .card {
   border: 1px solid rgba(128, 128, 128, 0.25);
   transition: border-color 0.15s ease;
-  &:hover { border-color: $accent; }
   .card-title { font-weight: 600; }
-  .listing-categories .listing-category { border-color: rgba(128, 128, 128, 0.35); }
+  .listing-subtitle { color: var(--bs-secondary-color); font-size: 0.85em; margin-top: -0.4rem; }
+  .listing-categories .listing-category {
+    border-color: rgba(128, 128, 128, 0.35);
+    text-transform: none;
+    font-size: 0.78em;
+  }
 }
+// Only linked cards respond to hover; a card that goes nowhere should not invite a click.
+.quarto-listing a.quarto-grid-link .card:hover { border-color: $accent; }
+.quarto-listing .card.card-unlinked { border-style: dashed; }
 
-// CV: portrait floated beside the title.
+// CV: portrait sits beside the title, above the first section rule.
 .cv-photo {
   float: right;
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 7rem;
+  height: 7rem;
   object-fit: cover;
   border-radius: 50%;
-  margin: -3.5rem 0 1rem 1.5rem;
+  margin: -4.6rem 0 0 1.5rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+.cv-download {
+  display: inline-block;
+  border: 1px solid $accent;
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: $accent;
+  text-decoration: none;
+  margin: 0 0 0.5rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  &:hover { background-color: $accent; color: $body-bg; }
 }
 @media (max-width: 576px) {
   .cv-photo { float: none; display: block; margin: 0 auto 1rem; }
@@ -111,12 +217,23 @@ main h2 {
   margin-bottom: 1.5rem !important;
   .column { flex: 0 0 auto; }
   .column:last-child { flex: 1 1 0; width: auto !important; }
-  .cv-when { color: var(--bs-secondary-color); font-variant-numeric: tabular-nums; padding-right: 0.75rem; }
+  .cv-when {
+    flex-basis: 7.5em !important;
+    width: auto !important;
+    white-space: nowrap;
+    color: var(--bs-secondary-color);
+    font-variant-numeric: tabular-nums;
+    padding-right: 0.75rem;
+  }
   p { margin-bottom: 0.15rem; }
   .cv-detail { display: block; color: var(--bs-secondary-color); font-size: 0.93em; }
 }
 @media (max-width: 576px) {
-  .columns.cv-entry { flex-direction: column; .column { width: 100% !important; flex: none; } }
+  .columns.cv-entry {
+    flex-direction: column;
+    .column, .cv-when { width: 100% !important; flex: none !important; flex-basis: auto !important; }
+    .cv-when { padding-right: 0; }
+  }
 }
 
 .page-footer { font-size: 0.9rem; }

@@ -1,13 +1,35 @@
 ---
 title: "Publications"
+description: "Peer-reviewed articles and preprints by Constantinos Xenophontos on microbial interactions, cheating and community functioning."
+bibliography:
+  articles: references.bib
+  preprints: preprints.bib
 nocite: '@*'
+validate-yaml: false
+filters:
+  - multibib
+citeproc: false
 ---
 
-<!-- Entries are generated from references.bib via the APA-CV style in
-     assets/apa-cv.csl. Add a BibTeX entry there to add a paper here. -->
+<!-- Entries are generated from references.bib (articles) and preprints.bib (preprints)
+     via the APA-CV style in assets/apa-cv.csl, one list each through the multibib
+     extension. Add a BibTeX entry to the right file to add a paper here.
+     TODO: one plain-language line per paper, or a figure thumbnail, once there are more. -->
 
-Peer-reviewed articles. Preprints and full record on
-[ORCID](https://orcid.org/0000-0001-9340-9566).
+Peer-reviewed articles, then preprints. Full record on
+[ORCID](https://orcid.org/0000-0001-9340-9566) and
+[Google Scholar](https://scholar.google.com/citations?user=dGgTnyUAAAAJ).
 
-::: {#refs}
+## Articles
+
+::: {#refs-articles}
+:::
+
+[The 2021 *FEMS Microbiology Ecology* article was selected as an
+[Editor's Choice](https://twitter.com/FEMSmicro/status/1397832504518795267) by the
+journal.]{.pub-note}
+
+## Preprints
+
+::: {#refs-preprints}
 :::

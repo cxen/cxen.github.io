@@ -1,0 +1,14 @@
+<!-- Listing items without a `path:` still get wrapped in <a href=""> by Quarto's grid
+     listing, which reloads the page on click and adds a pointless tab stop. Quarto's own
+     nav script rewrites that empty href to the page URL before this runs, so match on the
+     resolved URL. Unwrap the anchor and mark the card so custom.scss can style it. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var here = location.href.split("#")[0];
+  document.querySelectorAll("a.quarto-grid-link").forEach(function (a) {
+    if (a.getAttribute("href") !== "" && a.href.split("#")[0] !== here) return;
+    a.querySelectorAll(".card").forEach(function (c) { c.classList.add("card-unlinked"); });
+    a.replaceWith.apply(a, a.childNodes);
+  });
+});
+</script>

@@ -1,5 +1,6 @@
 ---
 title: "Curriculum Vitae"
+description: "CV of Constantinos Xenophontos: employment, education, publications, talks, teaching, outreach and skills. Also available as a PDF."
 nocite: '@*'
 filters:
   - assets/cv-typst.lua
@@ -16,13 +17,13 @@ format:
       y: 2cm
     mainfont: "Helvetica"
 format-links: false
-other-links:
-  - text: Download PDF
-    href: Constantinos-Xenophontos-CV.pdf
-    icon: file-earmark-pdf
 ---
 
 ![](images/profile.jpg){.cv-photo fig-alt="Portrait of Constantinos Xenophontos"}
+
+::: {.content-visible when-format="html"}
+[<i class="bi bi-file-earmark-pdf"></i> Download PDF](Constantinos-Xenophontos-CV.pdf){.cv-download}
+:::
 
 <!-- The "\@" in the e-mail is required: after "_" Pandoc would otherwise parse
      "@outlook.com" as a citation key and Typst would fail with "no bibliography". -->
@@ -106,7 +107,9 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2026 May
 :::
 ::: {.column width="84%"}
-**Microfluidic Horizons 2026** — oral presentation
+**Microfluidic Horizons 2026**, oral presentation
+
+[*Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding.* Xenophontos C., Vaidyanathan A., Micali G.]{.cv-detail}
 :::
 :::::
 
@@ -115,7 +118,9 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2025 Dec
 :::
 ::: {.column width="84%"}
-**BES Annual Meeting 2025** — poster presentation
+**BES Annual Meeting 2025**, poster presentation
+
+[*Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding.* Xenophontos C., Vaidyanathan A., Micali G.]{.cv-detail}
 :::
 :::::
 
@@ -124,7 +129,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2025 Jul
 :::
 ::: {.column width="84%"}
-**FEMS Micro 2025** — oral and poster presentations
+**FEMS Micro 2025**, oral and poster presentations
 
 [*Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding.* Xenophontos C., Vaidyanathan A., Micali G.]{.cv-detail}
 :::
@@ -135,7 +140,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2020 Dec
 :::
 ::: {.column width="84%"}
-**ISME Virtual Microbial Ecology Summit** — poster presentation
+**ISME Virtual Microbial Ecology Summit**, poster presentation
 
 [*Coexisting with cheaters: microbial cheating as a snowdrift game model.* Xenophontos C., Harpole W.S., Küsel K., Clark A.T. [doi:10.13140/RG.2.2.36728.26886](https://doi.org/10.13140/RG.2.2.36728.26886)]{.cv-detail}
 :::
@@ -146,7 +151,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2019 Dec
 :::
 ::: {.column width="84%"}
-**BES Annual Meeting 2019** — oral presentation
+**BES Annual Meeting 2019**, oral presentation
 
 [*Phylogenetic and functional dissimilarity have contrasting effects on the ecological functioning of synthetic bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K. [doi:10.13140/RG.2.2.16123.67361](https://doi.org/10.13140/RG.2.2.16123.67361)]{.cv-detail}
 :::
@@ -157,7 +162,9 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2019 Sep
 :::
 ::: {.column width="84%"}
-**SAME16** — poster presentation
+**SAME16**, poster presentation
+
+[*Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K.]{.cv-detail}
 :::
 :::::
 
@@ -166,7 +173,9 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2019 Aug
 :::
 ::: {.column width="84%"}
-**5th iDiv Conference** — poster presentation
+**5th iDiv Conference**, poster presentation
+
+[*Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K.]{.cv-detail}
 :::
 :::::
 
@@ -175,7 +184,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2018 Dec
 :::
 ::: {.column width="84%"}
-**4th iDiv Conference** — oral presentation
+**4th iDiv Conference**, oral presentation
 
 [*Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K.]{.cv-detail}
 :::
@@ -186,7 +195,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2018 Aug
 :::
 ::: {.column width="84%"}
-**ISME17** — poster presentation
+**ISME17**, poster presentation
 
 [*Species phylogenetic and functional diversity contribute to ecological functioning of groundwater bacterial communities.* Xenophontos C., Taubert M., Harpole W.S., Küsel K.]{.cv-detail}
 :::
@@ -197,7 +206,7 @@ The 2021 *FEMS Microbiology Ecology* article was selected as an
 2017 Sep
 :::
 ::: {.column width="84%"}
-**3rd iDiv Conference** — poster presentation
+**3rd iDiv Conference**, poster presentation
 
 [*Shifts in ecological functioning of groundwater bacteria driven by species interactions.* Xenophontos C., Geesink P., Kumar S., Wegner C.-E., Harpole W.S., Küsel K. [doi:10.13140/RG.2.2.24728.49929](https://doi.org/10.13140/RG.2.2.24728.49929)]{.cv-detail}
 :::
@@ -230,7 +239,7 @@ Soil DNA extraction and PCR practical course, Friedrich Schiller University Jena
 2026
 :::
 ::: {.column width="84%"}
-**Microfluidic Horizons 2026** — organising committee
+**Microfluidic Horizons 2026**, organising committee
 
 [Social media and communications; session moderator]{.cv-detail}
 :::
@@ -243,7 +252,7 @@ Soil DNA extraction and PCR practical course, Friedrich Schiller University Jena
 2023
 :::
 ::: {.column width="84%"}
-*Expo per lo Sport*, public event — Humanitas booth, Milan
+*Expo per lo Sport*, public event, Humanitas booth, Milan
 
 [DNA-extraction instructor for children]{.cv-detail}
 :::
@@ -278,7 +287,7 @@ Soil DNA extraction and PCR practical course, Friedrich Schiller University Jena
 2023
 :::
 ::: {.column width="84%"}
-EMBO Postdoctoral Fellowship — unsuccessful, post-interview stage
+EMBO Postdoctoral Fellowship, shortlisted and interviewed; not funded
 :::
 :::::
 
@@ -287,7 +296,7 @@ EMBO Postdoctoral Fellowship — unsuccessful, post-interview stage
 2023
 :::
 ::: {.column width="84%"}
-HFSP Long-Term Fellowship — unsuccessful
+HFSP Long-Term Fellowship, applied; not funded
 :::
 :::::
 
@@ -311,15 +320,17 @@ yDiv Doctoral Programme studentship, German Centre for Integrative Biodiversity 
 
 ## Societies
 
-- International Society for Microbial Ecology (ISME) — member
-- Royal Society of Biology (RSB) — member (MRSB)
-- British Ecological Society (BES) — member
-- Federation of European Microbiological Societies (FEMS) — affiliate member
-- Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE) — member
+- International Society for Microbial Ecology (ISME), member
+- Royal Society of Biology (RSB), member (MRSB)
+- British Ecological Society (BES), member
+- Federation of European Microbiological Societies (FEMS), affiliate member
+- Society for Open, Reliable, and Transparent Ecology and Evolutionary biology (SORTEE), member
 
 ## Skills
 
-- **Programming:** R (incl. Quarto), Python (incl. marimo notebooks), Julia; Git and GitHub version control
-- **3D printing and design:** PrusaSlicer, BambuStudio, Fusion 360, Meshmixer
-- **Operating systems:** Windows, macOS, Linux
-- **Microsoft Office:** Word, Excel, PowerPoint
+<!-- Rewritten Sep 2026 from what the site already states (bio, Software page, CV).
+     Diverges from the master CV's Skills list; port back if you keep it. -->
+
+- **Experimental:** bacterial growth assays in 96-well plate readers, microfluidic timelapse microscopy, continuous-culture bioreactors, synthetic bacterial communities, DNA extraction and PCR
+- **Computational:** R (tidyverse, Quarto), Python (marimo, Polars), Julia; growth-curve and dose–response analysis; image segmentation and cell tracking (Omnipose); Git and GitHub
+- **Hardware and fabrication:** open-source bioreactor firmware (ChiBio); 3D printing and design (PrusaSlicer, BambuStudio, Fusion 360, Meshmixer)

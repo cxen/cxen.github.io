@@ -52,15 +52,20 @@ Flat Quarto website project, no computations (no `_freeze`).
   `flatly`/`darkly` with `custom.scss` layered on both.
 - `index.qmd` — homepage using Quarto's `about: template: trestles` (photo + links left,
   bio right). Contact links are in the `about.links` YAML, not the body.
-- `publications.qmd`, `cv.qmd` — both use `nocite: '@*'` + a `::: {#refs}` div, so every
-  entry in `references.bib` is listed automatically. **Add papers to `references.bib`, never
-  as hand-written HTML.** `assets/apa-cv.csl` (APA CV variant: no in-text keys, DOIs
-  linked) does the formatting.
+- `publications.qmd` — two lists via the `multibib` extension (`_extensions/pandoc-ext`,
+  committed): `references.bib` → `#refs-articles`, `preprints.bib` → `#refs-preprints`, with
+  `citeproc: false` and `validate-yaml: false` (the filter runs citeproc itself). `cv.qmd`
+  uses the site-wide `references.bib` alone with `nocite: '@*'` + `::: {#refs}`, so the PDF
+  lists peer-reviewed articles only. **Add papers to the right `.bib`, never as hand-written
+  HTML.** `assets/apa-cv.csl` (APA CV variant: no in-text keys, DOIs linked) does the
+  formatting. Page-level `description:` is emitted as the `<meta>` description and hidden
+  from the title block by `custom.scss`.
 - `cv.qmd` renders HTML *and* a Typst PDF (`Constantinos-Xenophontos-CV.pdf`). The PDF link
-  is a manual `other-links` entry with `format-links: false` — a custom `format-links` entry
-  produced a duplicate default "Typst" link. `citeproc: true` on the typst format is
-  required — Typst's native bibliography ignores the `#refs` div and leaves Publications
-  empty.
+  is a `.cv-download` button in an HTML-only block under the title, with `format-links:
+  false` (Quarto's own format link and `other-links` sidebar were dropped: the sidebar entry
+  was too small for the page's main action, and a custom `format-links` entry produced a
+  duplicate default "Typst" link). `citeproc: true` on the typst format is required — Typst's
+  native bibliography ignores the `#refs` div and leaves Publications empty.
 - CV rows are `::::: {.columns .cv-entry}` with two `.column` children: `.cv-when` (date,
   `width="16%"`) and the entry, whose secondary line is a `[...]{.cv-detail}` span. In HTML
   this is Quarto's inline-block columns + `custom.scss` (stacks below 576px). Quarto emits
@@ -69,9 +74,15 @@ Flat Quarto website project, no computations (no `_freeze`).
   into smaller grey text, and the `.cv-photo` image into a `#place(top + right, ...)` beside
   the title. Keep the two-column structure or the filter falls through.
 - `software.qmd` + `software.yml` — a Quarto `listing` (grid) fed by the YAML. Add a tool by
-  adding an item to `software.yml`. An item without `path:` renders as a non-clickable card.
-- `custom.scss` — single accent colour (`$accent`), transparent navbar, pill-style about
-  links, `.cv-entry` grid, listing-card hover. Site-wide overrides go here, not a `.css`.
+  adding an item to `software.yml`. Private repos get `subtitle: Private repository` and no
+  `path:`; Quarto still wraps such cards in an empty `<a>`, so `assets/unlink-cards.html`
+  (included after the body) unwraps them and adds `.card-unlinked` for the dashed border.
+- `custom.scss` — single accent colour (`$accent`; lifted to `#45b5ad` in the dark theme so
+  links pass WCAG AA on `#222`), translucent navbar, pill-style about links, `.tagline` and
+  `.recent` on the homepage, `.cv-entry` rows, `.cv-download` button, listing cards.
+  Site-wide overrides go here, not a `.css`. Lato is self-hosted from `fonts/` (woff2,
+  `$web-font-path: false` disables Bootswatch's Google Fonts import); Quarto copies the
+  files next to the compiled CSS, so the `@font-face` URLs are relative to `site_libs/`.
 - `assets/email.html` — included after the body on every page. The contact address is **not**
   written anywhere in the HTML sources: navbar and about links use `href: "#email"` and this
   script rewrites them to a `mailto:` from a ROT13 string at load time (anti-scraping). To
@@ -101,6 +112,8 @@ there with the repo's `topic: description` message style (`personal-webpage: …
 - The PhD (FSU Jena/iDiv, research period 2016–2020) is **not yet awarded** as of 2026-08-27 —
   the CV says "PhD researcher" and the bio says "doctoral research", not "completed my PhD".
   Don't add an award year.
-- Open items: news/updates section, footer accessibility
-  statement, custom domain (undecided — no `CNAME`). `plate-functions` is a private repo, so
-  its software card has no link until it is made public.
+- Prose style: no em dashes anywhere in site text (use commas, colons or a new sentence).
+- Open items: footer accessibility statement, custom domain (undecided — no `CNAME`).
+  `FriendChip` and `plate-functions` are private repos; their cards are marked private and
+  unlinked until they are made public (add `path:`, drop `subtitle:`). The homepage `Recent`
+  list is hand-maintained: keep it to the three or four newest items.

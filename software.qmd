@@ -1,20 +1,21 @@
 ---
 title: "Software"
+description: "Open tools for analysing bacterial growth in plate readers, microfluidic chambers and bioreactors."
 listing:
   id: software
   contents: software.yml
   type: grid
-  grid-columns: 2
+  grid-columns: 3
   sort: false
   max-description-length: 1000
-  fields: [title, description, categories]
+  fields: [title, subtitle, description, categories]
   filter-ui: false
   sort-ui: false
 ---
 
-Tools I have written or contributed to for analysing bacterial growth — in plate
-readers, microfluidic chambers and bioreactors. Everything linked here is on
-[GitHub](https://github.com/cxen).
+Tools I have written or contributed to for analysing bacterial growth in plate
+readers, microfluidic chambers and bioreactors. Linked cards open the repository on
+[GitHub](https://github.com/cxen). Cards marked private are not yet published.
 
 ::: {#software}
 :::
