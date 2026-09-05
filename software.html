@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Open tools for analysing bacterial growth in plate readers, microfluidic chambers and bioreactors.">
 
 <title>Software – Constantinos Xenophontos</title>
 <style>
@@ -48,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d9346552f8e42af5517f17fa660d0f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-8d909c845e3e079c863cb2b8cb6fa2ec.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1d9346552f8e42af5517f17fa660d0f4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-811870a5065279ec0273252475fd4661.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f30ac7ffd85faa20669bad2064359a38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-811870a5065279ec0273252475fd4661.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -90,9 +91,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-subtitle","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -142,7 +143,7 @@ window.Quarto = {
 </script>
 
 <meta property="og:title" content="Software – Constantinos Xenophontos">
-<meta property="og:description" content="Microbial ecologist studying bacterial growth, interactions and antibiotic tolerance.">
+<meta property="og:description" content="Open tools for analysing bacterial growth in plate readers, microfluidic chambers and bioreactors.">
 <meta property="og:site_name" content="Constantinos Xenophontos">
 </head>
 
@@ -383,6 +384,11 @@ window.Quarto = {
 <h1 class="title">Software</h1>
 </div>
 
+<div>
+  <div class="description">
+    Open tools for analysing bacterial growth in plate readers, microfluidic chambers and bioreactors.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -397,16 +403,19 @@ window.Quarto = {
 </header>
 
 
-<p>Tools I have written or contributed to for analysing bacterial growth — in plate readers, microfluidic chambers and bioreactors. Everything linked here is on <a href="https://github.com/cxen">GitHub</a>.</p>
+<p>Tools I have written or contributed to for analysing bacterial growth in plate readers, microfluidic chambers and bioreactors. Linked cards open the repository on <a href="https://github.com/cxen">GitHub</a>. Cards marked private are not yet published.</p>
 <div id="listing-software" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-2">
+<div class="list grid quarto-listing-cols-3">
 <div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDaW1hZ2UlMjBhbmFseXNpcyUyQ21pY3JvZmx1aWRpY3MlMkNhdXRob3I=">
-<a href="https://github.com/cxen/FriendChip" class="quarto-grid-link">
+<a href="" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 FriendChip
 </h5>
+<div class="card-subtitle listing-subtitle">
+Private repository
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">Python</div>
@@ -419,7 +428,7 @@ FriendChip
 
 </div>
 <div class="card-text listing-description delink">
-<p>Config-first Python pipeline for microfluidics timelapse image analysis — from raw Leica .lif and Nikon .nd2 files through segmentation, tracking and lineage reconstruction to growth rates, dose–response curves and spatial cross-feeding analytics. Omnipose segmentation with GPU acceleration; one JSON config per experiment, one CLI and web app to drive every stage.</p>
+<p>From a raw .lif/.nd2 microfluidics timelapse to single-cell growth rates, dose–response fits and cross-feeding maps. One config per experiment, one CLI, GPU segmentation and tracking.</p>
 </div>
 </div>
 </div></a>
@@ -431,6 +440,9 @@ FriendChip
 <h5 class="no-anchor card-title listing-title">
 plate-functions
 </h5>
+<div class="card-subtitle listing-subtitle">
+Private repository
+</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
@@ -505,6 +517,20 @@ ChiBio (fork)
     patch();
   }
 })();
+</script>
+<!-- Listing items without a `path:` still get wrapped in <a href=""> by Quarto's grid
+     listing, which reloads the page on click and adds a pointless tab stop. Quarto's own
+     nav script rewrites that empty href to the page URL before this runs, so match on the
+     resolved URL. Unwrap the anchor and mark the card so custom.scss can style it. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var here = location.href.split("#")[0];
+  document.querySelectorAll("a.quarto-grid-link").forEach(function (a) {
+    if (a.getAttribute("href") !== "" && a.href.split("#")[0] !== here) return;
+    a.querySelectorAll(".card").forEach(function (c) { c.classList.add("card-unlinked"); });
+    a.replaceWith.apply(a, a.childNodes);
+  });
+});
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
