@@ -1,0 +1,24 @@
+---
+title: "3D designs"
+description: "Parts designed for 3D printing: lab hardware for microscopy and microfluidics, and printer and household mods."
+listing:
+  id: designs
+  contents: designs.yml
+  type: grid
+  grid-columns: 3
+  sort: false
+  max-description-length: 1000
+  image-height: 15em
+  fields: [image, title, subtitle, description, categories]
+  filter-ui: false
+  sort-ui: false
+---
+
+Parts I have designed for 3D printing, from lab hardware to printer and household
+mods. Linked cards open the model page, where the files are free to download. All my
+published models are on [Printables](https://www.printables.com/@Juvencus_113766/models)
+and [MakerWorld](https://makerworld.com/en/@Juvencus/upload). Cards marked as not yet
+published will be linked once the files are released.
+
+::: {#designs}
+:::

@@ -19,6 +19,8 @@ website:
         href: publications.qmd
       - text: Software
         href: software.qmd
+      - text: 3D designs
+        href: designs.qmd
       - text: CV
         href: cv.qmd
     right:

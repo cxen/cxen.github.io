@@ -77,6 +77,16 @@ Flat Quarto website project, no computations (no `_freeze`).
   adding an item to `software.yml`. Private repos get `subtitle: Private repository` and no
   `path:`; Quarto still wraps such cards in an empty `<a>`, so `assets/unlink-cards.html`
   (included after the body) unwraps them and adds `.card-unlinked` for the dashed border.
+- `designs.qmd` + `designs.yml` — "3D designs" page, the same grid `listing` pattern as
+  software but with a thumbnail (`image` + `image-alt`, files in `images/designs/`). Items
+  were taken from the user's Printables profile (`@Juvencus_113766`; its public GraphQL API at
+  `api.printables.com/graphql/` answers `userModels(userId: 113766)` when the HTML pages
+  refuse automated fetches). MakerWorld (`@Juvencus`) mirrors the same models and is only
+  readable through the browser extension; cards link to Printables, the intro to both
+  profiles. Unreleased models get `subtitle: Not yet published`
+  and no `path:`, and are unlinked by the same `unlink-cards.html` script. New thumbnails:
+  `magick <original> -auto-orient -resize '1000x1000>' -strip -quality 82 images/designs/<name>.jpg`
+  (`-strip` matters: phone photos carry EXIF).
 - `custom.scss` — single accent colour (`$accent`; lifted to `#45b5ad` in the dark theme so
   links pass WCAG AA on `#222`), translucent navbar, pill-style about links, `.tagline` and
   `.recent` on the homepage, `.cv-entry` rows, `.cv-download` button, listing cards.

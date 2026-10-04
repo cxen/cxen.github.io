@@ -1,0 +1,48 @@
+- title: Leica DMi8 stage adaptor for circular glass slides
+  subtitle: Not yet published
+  description: >-
+    Useful for microfluidic timelapses with 100X oil-immersion objectives.
+  categories: [lab hardware, microscopy, microfluidics]
+  # TODO: add `image:` + `image-alt:` (photo or render in images/designs/), and once the
+  # files are public add `path:` and drop `subtitle:`.
+
+- title: Prusa MINI+ camera and light ring mount
+  path: https://www.printables.com/model/309177-prusa-mini-raspberry-pi-camera-v13-square-neopixel
+  image: images/designs/prusa-mini-camera-mount.jpg
+  image-alt: "Black printed mount on the X axis of a Prusa MINI+, holding a Raspberry Pi camera inside a ring of 16 LEDs."
+  description: >-
+    X axis mount for the Raspberry Pi Camera Module 1 (V1.3) on the Prusa MINI+, with
+    a slot for a 44.5 mm NeoPixel 16 LED ring.
+  categories: [3D printer, Raspberry Pi]
+
+- title: Stand for ZEERA MegFold 3-in-1 charger
+  path: https://www.printables.com/model/682377-stand-for-zeera-megfold-3-in-1-charger
+  image: images/designs/zeera-megfold-stand.jpg
+  image-alt: "Black printed stand next to an unfolded three-pad wireless charging mat."
+  description: >-
+    Stand for the ZEERA MegFold 3-in-1 wireless MagSafe charging mat.
+  categories: [gadgets]
+
+- title: IKEA KNAGGLIG drying mod
+  path: https://www.printables.com/model/564073-ikea-knagglig-drying-mod
+  image: images/designs/knagglig-drying.jpg
+  image-alt: "Black printed rail clipped to the side of a pine IKEA KNAGGLIG crate, with an orange cloth hanging from it."
+  description: >-
+    Clip-on rail for the IKEA KNAGGLIG crate for drying small cloths.
+  categories: [household, IKEA]
+
+- title: IKEA KNAGGLIG rack mod
+  path: https://www.printables.com/model/564088-ikea-knagglig-rack-mod
+  image: images/designs/knagglig-rack.jpg
+  image-alt: "Black printed tray hooked onto a pine IKEA KNAGGLIG crate, holding two sponges."
+  description: >-
+    Drain rack for sponges that hangs on the IKEA KNAGGLIG crate.
+  categories: [household, IKEA]
+
+- title: IKEA KNAGGLIG power extension mod
+  path: https://www.printables.com/model/564086-ikea-knagglig-power-extension-mod
+  image: images/designs/knagglig-power-extension.jpg
+  image-alt: "Black printed holder containing a white three-socket power strip."
+  description: >-
+    Holder for a small power extension on the IKEA KNAGGLIG crate.
+  categories: [household, IKEA]
