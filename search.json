@@ -105,6 +105,13 @@
     "text": "Skills\n\n\nExperimental: bacterial growth assays in 96-well plate readers, microfluidic timelapse microscopy, continuous-culture bioreactors, synthetic bacterial communities, DNA extraction and PCR\nComputational: R (tidyverse, Quarto), Python (marimo, Polars), Julia; growth-curve and dose–response analysis; image segmentation and cell tracking (Omnipose); Git and GitHub\nHardware and fabrication: open-source bioreactor firmware (ChiBio); 3D printing and design (PrusaSlicer, BambuStudio, Fusion 360, Meshmixer)"
   },
   {
+    "objectID": "designs.html",
+    "href": "designs.html",
+    "title": "3D designs",
+    "section": "",
+    "text": "Parts I have designed for 3D printing, from lab hardware to printer and household mods. Linked cards open the model page, where the files are free to download. All my published models are on Printables and MakerWorld. Cards marked as not yet published will be linked once the files are released.\n\n\n\n\n\n\n\n\nLeica DMi8 stage adaptor for circular glass slides\n\n\nNot yet published\n\n\n\nlab hardware\n\nmicroscopy\n\nmicrofluidics\n\n\n\nUseful for microfluidic timelapses with 100X oil-immersion objectives.\n\n\n\n\n\n\n\n\n\n\n\n\nPrusa MINI+ camera and light ring mount\n\n\n\n3D printer\n\nRaspberry Pi\n\n\n\nX axis mount for the Raspberry Pi Camera Module 1 (V1.3) on the Prusa MINI+, with a slot for a 44.5 mm NeoPixel 16 LED ring.\n\n\n\n\n\n\n\n\n\n\n\n\nStand for ZEERA MegFold 3-in-1 charger\n\n\n\ngadgets\n\n\n\nStand for the ZEERA MegFold 3-in-1 wireless MagSafe charging mat.\n\n\n\n\n\n\n\n\n\n\n\n\nIKEA KNAGGLIG drying mod\n\n\n\nhousehold\n\nIKEA\n\n\n\nClip-on rail for the IKEA KNAGGLIG crate for drying small cloths.\n\n\n\n\n\n\n\n\n\n\n\n\nIKEA KNAGGLIG rack mod\n\n\n\nhousehold\n\nIKEA\n\n\n\nDrain rack for sponges that hangs on the IKEA KNAGGLIG crate.\n\n\n\n\n\n\n\n\n\n\n\n\nIKEA KNAGGLIG power extension mod\n\n\n\nhousehold\n\nIKEA\n\n\n\nHolder for a small power extension on the IKEA KNAGGLIG crate.\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",

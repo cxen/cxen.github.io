@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Microbial ecologist studying how bacteria grow, cooperate and cheat, and how those interactions change the way populations respond to antibiotics.">
+<meta name="description" content="Parts designed for 3D printing: lab hardware for microscopy and microfluidics, and printer and household mods.">
 
-<title>Constantinos Xenophontos</title>
+<title>3D designs – Constantinos Xenophontos</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,10 +36,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -78,14 +81,72 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-designs .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-image','listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-subtitle","listing-description","listing-categories","listing-image","listing-image-alt"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-designs'] = new List('listing-designs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Constantinos Xenophontos">
-<meta property="og:description" content="Microbial ecologist studying how bacteria grow, cooperate and cheat, and how those interactions change the way populations respond to antibiotics.">
-<meta property="og:image" content="https://cxen.github.io/images/profile.jpg">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="3D designs – Constantinos Xenophontos">
+<meta property="og:description" content="Parts designed for 3D printing: lab hardware for microscopy and microfluidics, and printer and household mods.">
+<meta property="og:image" content="https://cxen.github.io/images/designs/prusa-mini-camera-mount.jpg">
 <meta property="og:site_name" content="Constantinos Xenophontos">
-<meta property="og:image:alt" content="Portrait of Constantinos Xenophontos">
+<meta property="og:image:alt" content="Black printed mount on the X axis of a Prusa MINI+, holding a Raspberry Pi camera inside a ring of 16 LEDs.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -268,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -280,7 +341,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./designs.html"> 
+    <a class="nav-link active" href="./designs.html" aria-current="page"> 
 <span class="menu-text">3D designs</span></a>
   </li>  
   <li class="nav-item">
@@ -321,75 +382,183 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="images/profile.jpg" alt="Portrait of Constantinos Xenophontos" class="about-image
-  round " style="height: 15em; width: 15em;">
+<main class="content" id="quarto-document-content">
+
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Constantinos Xenophontos</h1>
-<p class="subtitle lead">Postdoctoral researcher in microbial ecology, Milan</p>
+<h1 class="title">3D designs</h1>
 </div>
+
 <div>
   <div class="description">
-    Microbial ecologist studying how bacteria grow, cooperate and cheat, and how those interactions change the way populations respond to antibiotics.
+    Parts designed for 3D printing: lab hardware for microscopy and microfluidics, and printer and household mods.
   </div>
 </div>
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/cxen" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://orcid.org/0000-0001-9340-9566" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="ai  ai-orcid" aria-label="orcid"></i> ORCID</span>
-  </a>
-  <a href="https://scholar.google.com/citations?user=dGgTnyUAAAAJ" class="about-link" rel="" target="">
-     <span class="about-link-text"><i class="ai  ai-google-scholar" aria-label="google-scholar"></i> Scholar</span>
-  </a>
-  <a href="/#email" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-
-<!-- Bio (Aug 2026, revised Sep 2026): grounded in ORCID, the CV and public GitHub.
-     The tagline is the one-line research pitch that must stay in the first viewport.
-     Current-work sentences are deliberately broad; tighten or add the unpublished
-     directions (EVs/LIPUS, bile acids) only if you want them public. -->
-<p><span class="tagline">How bacteria grow, cooperate and cheat, and how those interactions change the way populations respond to antibiotics.</span></p>
-<p>I am a microbial ecologist and postdoctoral researcher in Gabriele Micali’s Microbial Ecology Lab at <a href="https://www.humanitas.net/">IRCCS Humanitas Research Hospital</a> in Milan. I work with small synthetic bacterial communities, asking how cross-feeding, public goods and cheating shape their composition, and what those interactions do to antibiotic tolerance.</p>
-<p>I run growth experiments in plate readers, microfluidic chambers and continuous-culture bioreactors, and I write the analysis pipelines that turn those time series into growth rates, lineages and dose–response curves. The code is on the <a href="./software.html">Software</a> page.</p>
-<p>I did my doctoral research in microbial ecology at Friedrich Schiller University Jena and the German Centre for Integrative Biodiversity Research (iDiv), where I tested ecological theory with synthetic bacterial communities and models of public-goods cheating. Before that I trained in ecology and evolution at Imperial College London and in biology at the University of Hull.</p>
-<section id="recent" class="level2">
-<h2 data-anchor-id="recent">Recent</h2>
-<!-- Keep to the three or four newest items; older ones live on the CV page. -->
-<div class="recent">
-<ul>
-<li><span class="when">May 2026</span> Talk at <a href="./cv.html#conference-presentations">Microfluidic Horizons 2026</a>, where I also served on the organising committee.</li>
-<li><span class="when">Dec 2025</span> Poster at the BES Annual Meeting 2025.</li>
-<li><span class="when">Jul 2025</span> Talk and poster at FEMS Micro 2025: <em>Stronger at the seams: antibiotic stress enhances amino acid leakage and cross-feeding</em>.</li>
-</ul>
-</div>
-</section>
-<section id="interests" class="level2">
-<h2 data-anchor-id="interests">Interests</h2>
-<ul>
-<li>Microbial interactions: cross-feeding, public goods, cooperation and cheating</li>
-<li>Bacterial growth dynamics and antibiotic tolerance</li>
-<li>Quantitative methods for growth-curve, timelapse and bioreactor data</li>
-<li>Open, reproducible analysis tooling in R and Python</li>
-</ul>
 
 
-</section>
-</main></div>
+<p>Parts I have designed for 3D printing, from lab hardware to printer and household mods. Linked cards open the model page, where the files are free to download. All my published models are on <a href="https://www.printables.com/@Juvencus_113766/models">Printables</a> and <a href="https://makerworld.com/en/@Juvencus/upload">MakerWorld</a>. Cards marked as not yet published will be linked once the files are released.</p>
+<div id="listing-designs" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="bGFiJTIwaGFyZHdhcmUlMkNtaWNyb3Njb3B5JTJDbWljcm9mbHVpZGljcw==">
+<a href="" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Leica DMi8 stage adaptor for circular glass slides
+</h5>
+<div class="card-subtitle listing-subtitle">
+Not yet published
 </div>
- <!-- /main -->
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bGFiJTIwaGFyZHdhcmU='); return false;">lab hardware</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWljcm9zY29weQ=='); return false;">microscopy</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWljcm9mbHVpZGljcw=='); return false;">microfluidics</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Useful for microfluidic timelapses with 100X oil-immersion objectives.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="M0QlMjBwcmludGVyJTJDUmFzcGJlcnJ5JTIwUGk=">
+<a href="https://www.printables.com/model/309177-prusa-mini-raspberry-pi-camera-v13-square-neopixel" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/prusa-mini-camera-mount.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Black printed mount on the X axis of a Prusa MINI+, holding a Raspberry Pi camera inside a ring of 16 LEDs.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Prusa MINI+ camera and light ring mount
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('M0QlMjBwcmludGVy'); return false;">3D printer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmFzcGJlcnJ5JTIwUGk='); return false;">Raspberry Pi</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>X axis mount for the Raspberry Pi Camera Module 1 (V1.3) on the Prusa MINI+, with a slot for a 44.5 mm NeoPixel 16 LED ring.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Z2FkZ2V0cw==">
+<a href="https://www.printables.com/model/682377-stand-for-zeera-megfold-3-in-1-charger" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/zeera-megfold-stand.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Black printed stand next to an unfolded three-pad wireless charging mat.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Stand for ZEERA MegFold 3-in-1 charger
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2FkZ2V0cw=='); return false;">gadgets</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Stand for the ZEERA MegFold 3-in-1 wireless MagSafe charging mat.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="aG91c2Vob2xkJTJDSUtFQQ==">
+<a href="https://www.printables.com/model/564073-ikea-knagglig-drying-mod" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/knagglig-drying.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Black printed rail clipped to the side of a pine IKEA KNAGGLIG crate, with an orange cloth hanging from it.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+IKEA KNAGGLIG drying mod
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aG91c2Vob2xk'); return false;">household</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SUtFQQ=='); return false;">IKEA</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Clip-on rail for the IKEA KNAGGLIG crate for drying small cloths.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="aG91c2Vob2xkJTJDSUtFQQ==">
+<a href="https://www.printables.com/model/564088-ikea-knagglig-rack-mod" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/knagglig-rack.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Black printed tray hooked onto a pine IKEA KNAGGLIG crate, holding two sponges.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+IKEA KNAGGLIG rack mod
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aG91c2Vob2xk'); return false;">household</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SUtFQQ=='); return false;">IKEA</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Drain rack for sponges that hangs on the IKEA KNAGGLIG crate.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="aG91c2Vob2xkJTJDSUtFQQ==">
+<a href="https://www.printables.com/model/564086-ikea-knagglig-power-extension-mod" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/knagglig-power-extension.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Black printed holder containing a white three-socket power strip.">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+IKEA KNAGGLIG power extension mod
+</h5>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('aG91c2Vob2xk'); return false;">household</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SUtFQQ=='); return false;">IKEA</div>
+
+</div>
+<div class="card-text listing-description delink">
+<p>Holder for a small power extension on the IKEA KNAGGLIG crate.</p>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+
+
+
+
+</main> <!-- /main -->
 <!-- Contact e-mail obfuscation: the address never appears in the HTML source.
      Links with href="#email" get a real mailto: built in the browser from a ROT13 string,
      so plain-text scrapers that grep the page for "@" find nothing. -->
@@ -445,6 +614,13 @@ document.addEventListener("DOMContentLoaded", function () {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
