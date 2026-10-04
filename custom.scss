@@ -183,6 +183,17 @@ main h2, .about-contents h2 {
 // Only linked cards respond to hover; a card that goes nowhere should not invite a click.
 .quarto-listing a.quarto-grid-link .card:hover { border-color: $accent; }
 .quarto-listing .card.card-unlinked { border-style: dashed; }
+// Cards with several photos (assets/card-carousel.html). The extra images wait in a
+// hidden div until the script moves them into the card.
+.card-extra-images { display: none; }
+.card-carousel {
+  img { object-fit: cover; width: 100%; }
+  .carousel-control-prev, .carousel-control-next { width: 18%; opacity: 0.85; }
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
+  }
+  .carousel-indicators { margin-bottom: 0.4rem; }
+}
 
 // CV: portrait sits beside the title, above the first section rule.
 .cv-photo {

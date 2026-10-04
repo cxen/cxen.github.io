@@ -22,3 +22,10 @@ published will be linked once the files are released.
 
 ::: {#designs}
 :::
+
+<!-- Extra photos for a card: assets/card-carousel.html moves these into a carousel on the
+     card whose `image:` in designs.yml matches `data-for`. -->
+
+::: {.card-extra-images data-for="images/designs/dmi8-stage-adaptor.jpg"}
+![](images/designs/dmi8-stage-adaptor-side.jpg){fig-alt="Side view of the adaptor in the stage insert beneath the microscope condenser, with tubing running from the microfluidic chip."}
+:::

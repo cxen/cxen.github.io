@@ -2,9 +2,11 @@
   subtitle: Not yet published
   description: >-
     Useful for microfluidic timelapses with 100X oil-immersion objectives.
+  image: images/designs/dmi8-stage-adaptor.jpg
+  image-alt: "Top-down view of a black printed adaptor seated in the microscope stage insert, holding a circular glass slide with a microfluidic chip and its tubing over the objective."
   categories: [lab hardware, microscopy, microfluidics]
-  # TODO: add `image:` + `image-alt:` (photo or render in images/designs/), and once the
-  # files are public add `path:` and drop `subtitle:`.
+  # Placeholder photo (2026-10-04) until the files are in order. TODO: once the files are
+  # public add `path:` and drop `subtitle:`.
 
 - title: Prusa MINI+ camera and light ring mount
   path: https://www.printables.com/model/309177-prusa-mini-raspberry-pi-camera-v13-square-neopixel

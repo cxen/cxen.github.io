@@ -86,7 +86,11 @@ Flat Quarto website project, no computations (no `_freeze`).
   profiles. Unreleased models get `subtitle: Not yet published`
   and no `path:`, and are unlinked by the same `unlink-cards.html` script. New thumbnails:
   `magick <original> -auto-orient -resize '1000x1000>' -strip -quality 82 images/designs/<name>.jpg`
-  (`-strip` matters: phone photos carry EXIF).
+  (`-strip` matters: phone photos carry EXIF). A card with several photos keeps its first
+  one in `image:`; the others go in a `.card-extra-images` div in `designs.qmd` with
+  `data-for` set to that `image:` path, and `assets/card-carousel.html` (site-wide include)
+  rebuilds the thumbnail as a Bootstrap carousel. The DMi8 adaptor photos are placeholders
+  cropped from 768px Photos previews.
 - `custom.scss` — single accent colour (`$accent`; lifted to `#45b5ad` in the dark theme so
   links pass WCAG AA on `#222`), translucent navbar, pill-style about links, `.tagline` and
   `.recent` on the homepage, `.cv-entry` rows, `.cv-download` button, listing cards.

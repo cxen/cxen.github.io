@@ -1,0 +1,60 @@
+<!-- A listing card takes a single `image:`. To give a card more photos, put the extra
+     images in a `.card-extra-images` div on the page, with `data-for` set to the card's
+     own `image:` path. This turns that card's thumbnail into a Bootstrap carousel (no
+     autoplay; arrows, dots and swipe). Without JavaScript the card keeps its first image
+     and the extras stay hidden (custom.scss). -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".card-extra-images[data-for]").forEach(function (extra, n) {
+    var first = document.querySelector('.quarto-listing .card img[src="' + extra.dataset.for + '"]');
+    var more = extra.querySelectorAll("img");
+    if (!first || !more.length) return;
+
+    var id = "card-carousel-" + n;
+    var carousel = document.createElement("div");
+    carousel.id = id;
+    carousel.className = "carousel slide card-img-top card-carousel";
+    carousel.setAttribute("aria-label", "Photos");
+
+    var inner = document.createElement("div");
+    inner.className = "carousel-inner";
+    var dots = document.createElement("div");
+    dots.className = "carousel-indicators";
+
+    var holder = first.closest(".card-img-top");
+    [first].concat(Array.prototype.slice.call(more)).forEach(function (img, i) {
+      img.className = first.className;
+      img.style.height = first.style.height;
+      img.loading = "eager";
+      var item = document.createElement("div");
+      item.className = "carousel-item" + (i === 0 ? " active" : "");
+      item.appendChild(img);
+      inner.appendChild(item);
+
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.dataset.bsTarget = "#" + id;
+      dot.dataset.bsSlideTo = i;
+      dot.setAttribute("aria-label", "Photo " + (i + 1));
+      if (i === 0) { dot.className = "active"; dot.setAttribute("aria-current", "true"); }
+      dots.appendChild(dot);
+    });
+    carousel.appendChild(inner);
+    carousel.appendChild(dots);
+
+    [["prev", "Previous photo"], ["next", "Next photo"]].forEach(function (d) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "carousel-control-" + d[0];
+      b.dataset.bsTarget = "#" + id;
+      b.dataset.bsSlide = d[0];
+      b.innerHTML = '<span class="carousel-control-' + d[0] + '-icon" aria-hidden="true"></span>' +
+        '<span class="visually-hidden">' + d[1] + "</span>";
+      carousel.appendChild(b);
+    });
+
+    holder.replaceWith(carousel);
+    extra.remove();
+  });
+});
+</script>
