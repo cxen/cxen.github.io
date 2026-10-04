@@ -49,9 +49,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-811870a5065279ec0273252475fd4661.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f30ac7ffd85faa20669bad2064359a38.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-811870a5065279ec0273252475fd4661.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f02f0c1f72c85a31e95a4537fe52cbf4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8e7d6b006dd6361baa5c837e6fbef45f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f02f0c1f72c85a31e95a4537fe52cbf4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/size.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-title','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-subtitle","listing-description","listing-categories","listing-image","listing-image-alt"],
+      searchColumns: ["listing-title","listing-subtitle","listing-description","listing-image","listing-image-alt","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -144,9 +144,9 @@ window.Quarto = {
 
 <meta property="og:title" content="3D designs – Constantinos Xenophontos">
 <meta property="og:description" content="Parts designed for 3D printing: lab hardware for microscopy and microfluidics, and printer and household mods.">
-<meta property="og:image" content="https://cxen.github.io/images/designs/prusa-mini-camera-mount.jpg">
+<meta property="og:image" content="https://cxen.github.io/images/designs/dmi8-stage-adaptor.jpg">
 <meta property="og:site_name" content="Constantinos Xenophontos">
-<meta property="og:image:alt" content="Black printed mount on the X axis of a Prusa MINI+, holding a Raspberry Pi camera inside a ring of 16 LEDs.">
+<meta property="og:image:alt" content="Top-down view of a black printed adaptor seated in the microscope stage insert, holding a circular glass slide with a microfluidic chip and its tubing over the objective.">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -415,7 +415,9 @@ window.Quarto = {
 <div class="g-col-1" data-index="0" data-categories="bGFiJTIwaGFyZHdhcmUlMkNtaWNyb3Njb3B5JTJDbWljcm9mbHVpZGljcw==">
 <a href="" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-
+<p class="card-img-top">
+<img loading="lazy" src="images/designs/dmi8-stage-adaptor.jpg" class="thumbnail-image card-img" style="height: 15em;" alt="Top-down view of a black printed adaptor seated in the microscope stage insert, holding a circular glass slide with a microfluidic chip and its tubing over the objective.">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Leica DMi8 stage adaptor for circular glass slides
@@ -554,6 +556,11 @@ IKEA KNAGGLIG power extension mod
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+<!-- Extra photos for a card: assets/card-carousel.html moves these into a carousel on the
+     card whose `image:` in designs.yml matches `data-for`. -->
+<div class="card-extra-images" data-for="images/designs/dmi8-stage-adaptor.jpg">
+<p><img src="images/designs/dmi8-stage-adaptor-side.jpg" class="img-fluid" alt="Side view of the adaptor in the stage insert beneath the microscope condenser, with tubing running from the microfluidic chip."></p>
+</div>
 
 
 
@@ -596,6 +603,66 @@ document.addEventListener("DOMContentLoaded", function () {
     if (a.getAttribute("href") !== "" && a.href.split("#")[0] !== here) return;
     a.querySelectorAll(".card").forEach(function (c) { c.classList.add("card-unlinked"); });
     a.replaceWith.apply(a, a.childNodes);
+  });
+});
+</script>
+<!-- A listing card takes a single `image:`. To give a card more photos, put the extra
+     images in a `.card-extra-images` div on the page, with `data-for` set to the card's
+     own `image:` path. This turns that card's thumbnail into a Bootstrap carousel (no
+     autoplay; arrows, dots and swipe). Without JavaScript the card keeps its first image
+     and the extras stay hidden (custom.scss). -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".card-extra-images[data-for]").forEach(function (extra, n) {
+    var first = document.querySelector('.quarto-listing .card img[src="' + extra.dataset.for + '"]');
+    var more = extra.querySelectorAll("img");
+    if (!first || !more.length) return;
+
+    var id = "card-carousel-" + n;
+    var carousel = document.createElement("div");
+    carousel.id = id;
+    carousel.className = "carousel slide card-img-top card-carousel";
+    carousel.setAttribute("aria-label", "Photos");
+
+    var inner = document.createElement("div");
+    inner.className = "carousel-inner";
+    var dots = document.createElement("div");
+    dots.className = "carousel-indicators";
+
+    var holder = first.closest(".card-img-top");
+    [first].concat(Array.prototype.slice.call(more)).forEach(function (img, i) {
+      img.className = first.className;
+      img.style.height = first.style.height;
+      img.loading = "eager";
+      var item = document.createElement("div");
+      item.className = "carousel-item" + (i === 0 ? " active" : "");
+      item.appendChild(img);
+      inner.appendChild(item);
+
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.dataset.bsTarget = "#" + id;
+      dot.dataset.bsSlideTo = i;
+      dot.setAttribute("aria-label", "Photo " + (i + 1));
+      if (i === 0) { dot.className = "active"; dot.setAttribute("aria-current", "true"); }
+      dots.appendChild(dot);
+    });
+    carousel.appendChild(inner);
+    carousel.appendChild(dots);
+
+    [["prev", "Previous photo"], ["next", "Next photo"]].forEach(function (d) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "carousel-control-" + d[0];
+      b.dataset.bsTarget = "#" + id;
+      b.dataset.bsSlide = d[0];
+      b.innerHTML = '<span class="carousel-control-' + d[0] + '-icon" aria-hidden="true"></span>' +
+        '<span class="visually-hidden">' + d[1] + "</span>";
+      carousel.appendChild(b);
+    });
+
+    holder.replaceWith(carousel);
+    extra.remove();
   });
 });
 </script>
